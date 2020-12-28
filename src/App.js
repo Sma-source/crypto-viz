@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import "./App.css";
 
-function App() {
+const App = () => {
+  const [coins, setCoin] = useState();
+  const url =
+    "https://cors-anywhere.herokuapp.com/https://api.coinlore.net/api/tickers/";
+  const getCoins = async () => {
+    const response = await fetch(`${url}/?limit=5`);
+    const data = await response.json();
+    const item = data.data;
+    // console.log(item);
+    setCoin(item);
+  };
+  useEffect(() => {
+    getCoins();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {coins && (
+        <ul className="users">
+          {coins.map((coin) => {
+            const { id, name, price_usd, symbol } = coin;
+            return (
+              <li key={id}>
+                <p className="sym">{symbol}</p>
+                <div>
+                  <h4>{name}</h4>
+                  <p>$ {price_usd} </p>
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+      )}
     </div>
   );
-}
+};
 
 export default App;
