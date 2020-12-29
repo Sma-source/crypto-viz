@@ -25,7 +25,13 @@ const App = () => {
     getCoins();
   }, []);
 
-  return <></>;
+  return (
+    <>
+      <div class="container">
+        <div class="table"></div>
+      </div>
+    </>
+  );
 };
 
 export default App;
