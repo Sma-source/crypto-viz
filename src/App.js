@@ -1,4 +1,13 @@
 import React, { useState, useEffect } from "react";
+import {
+  XYPlot,
+  XAxis,
+  YAxis,
+  LineSeries,
+  VerticalBarSeries,
+  VerticalGridLines,
+  HorizontalGridLines,
+} from "react-vis";
 import "./App.css";
 
 const App = () => {
@@ -6,7 +15,7 @@ const App = () => {
   const url =
     "https://cors-anywhere.herokuapp.com/https://api.coinlore.net/api/tickers/";
   const getCoins = async () => {
-    const response = await fetch(`${url}/?limit=5`);
+    const response = await fetch(`${url}/?limit=2`);
     const data = await response.json();
     const item = data.data;
     // console.log(item);
@@ -16,26 +25,7 @@ const App = () => {
     getCoins();
   }, []);
 
-  return (
-    <div>
-      {coins && (
-        <ul className="users">
-          {coins.map((coin) => {
-            const { id, name, price_usd, symbol } = coin;
-            return (
-              <li key={id}>
-                <p className="sym">{symbol}</p>
-                <div>
-                  <h4>{name}</h4>
-                  <p>$ {price_usd} </p>
-                </div>
-              </li>
-            );
-          })}
-        </ul>
-      )}
-    </div>
-  );
+  return <></>;
 };
 
 export default App;
