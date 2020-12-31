@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { IoMdArrowDropup, IoMdArrowDropdown } from "react-icons/io";
-
 import "./App.css";
 
 const App = () => {
@@ -69,6 +68,7 @@ const App = () => {
               test += " red";
               ic = <IoMdArrowDropdown />;
             }
+
             return (
               <div className="row" key={id}>
                 <div className="cell" data-title="#">
