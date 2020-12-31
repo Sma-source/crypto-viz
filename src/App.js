@@ -4,10 +4,9 @@ import "./App.css";
 
 const App = () => {
   const [coins, setCoin] = useState([]);
-  const url =
-    "https://cors-anywhere.herokuapp.com/https://api.coinlore.net/api/tickers/";
+  const url = "https://api.coinlore.net/api/tickers/?limit=15";
   const getCoins = async () => {
-    const response = await fetch(`${url}/?limit=10`);
+    const response = await fetch(url);
     const data = await response.json();
     const item = data.data;
     // console.log(item);
@@ -15,6 +14,11 @@ const App = () => {
   };
   useEffect(() => {
     getCoins();
+    const interval = setInterval(() => {
+      getCoins();
+    }, 30000);
+
+    return () => clearInterval(interval);
   }, []);
 
   return (
