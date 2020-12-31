@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { IoMdArrowDropup, IoMdArrowDropdown } from "react-icons/io";
 
 import "./App.css";
 
@@ -51,16 +52,22 @@ const App = () => {
             } = coin;
 
             let classes = "cell";
+            let icon;
             if (percent_change_7d >= 0) {
               classes += " green";
+              icon = <IoMdArrowDropup />;
             } else {
               classes += " red";
+              icon = <IoMdArrowDropdown />;
             }
             let test = "cell";
+            let ic;
             if (percent_change_24h >= 0) {
               test += " green";
+              ic = <IoMdArrowDropup />;
             } else {
               test += " red";
+              ic = <IoMdArrowDropdown />;
             }
             return (
               <div className="row" key={id}>
@@ -74,10 +81,10 @@ const App = () => {
                   ${price_usd}
                 </div>
                 <div className={test} data-title="24h">
-                  {percent_change_24h}%
+                  {ic} {percent_change_24h}%
                 </div>
                 <div className={classes} data-title="7d">
-                  {percent_change_7d}%
+                  {icon} {percent_change_7d}%
                 </div>
                 <div className="cell" data-title="Market Cap">
                   ${market_cap_usd}
