@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { IoMdArrowDropup, IoMdArrowDropdown } from "react-icons/io";
 import "./App.css";
+import Loading from "./Loading";
 
 const App = () => {
   const [coins, setCoin] = useState([]);
@@ -24,11 +25,7 @@ const App = () => {
   }, []);
 
   if (isLoading) {
-    return (
-      <div>
-        <h1>Loading...</h1>
-      </div>
-    );
+    return <Loading />;
   }
   return (
     <>
