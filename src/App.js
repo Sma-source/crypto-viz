@@ -4,6 +4,7 @@ import "./App.css";
 
 const App = () => {
   const [coins, setCoin] = useState([]);
+  const [loading, isLoading] = useState(true);
   const url = "https://api.coinlore.net/api/tickers/?limit=15";
   const getCoins = async () => {
     const response = await fetch(url);
