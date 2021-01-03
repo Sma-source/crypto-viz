@@ -8,12 +8,16 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(true);
   const url = "https://api.coinlore.net/api/tickers/?limit=15";
   const getCoins = async () => {
-    const response = await fetch(url);
-    const data = await response.json();
-    const item = data.data;
-    // console.log(item);
-    setCoin(item);
-    setIsLoading(false);
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      const item = data.data;
+      // console.log(item);
+      setIsLoading(false);
+      setCoin(item);
+    } catch (error) {
+      console.log(error);
+    }
   };
   useEffect(() => {
     getCoins();

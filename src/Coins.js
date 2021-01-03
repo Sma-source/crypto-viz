@@ -1,5 +1,5 @@
 import React from "react";
-function List() {
+function Coins() {
   return <></>;
 }
-export default List;
+export default Coins;
