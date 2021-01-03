@@ -4,7 +4,7 @@ import "./App.css";
 
 const App = () => {
   const [coins, setCoin] = useState([]);
-  const [loading, isLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
   const url = "https://api.coinlore.net/api/tickers/?limit=15";
   const getCoins = async () => {
     const response = await fetch(url);
@@ -12,6 +12,7 @@ const App = () => {
     const item = data.data;
     // console.log(item);
     setCoin(item);
+    setIsLoading(false);
   };
   useEffect(() => {
     getCoins();
@@ -22,6 +23,13 @@ const App = () => {
     return () => clearInterval(interval);
   }, []);
 
+  if (isLoading) {
+    return (
+      <div>
+        <h1>Loading...</h1>
+      </div>
+    );
+  }
   return (
     <>
       <div className="container">
