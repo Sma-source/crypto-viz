@@ -4,7 +4,6 @@ const Coins = ({ coins }) => {
   return (
     <>
       <div className="container">
-        <h1>All Coins</h1>
         <div className="table">
           <div className="row header">
             <div className="cell">#</div>
