@@ -1,5 +1,5 @@
 import React from "react";
-const Globals = () => {
+const Globals = ({ globals }) => {
   return <></>;
 };
 
