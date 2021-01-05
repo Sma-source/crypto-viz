@@ -1,5 +1,5 @@
 import React from "react";
-import { IoMdArrowDropup, IoMdArrowDropdown } from "react-icons/io";
+import UpDown from "./UpDown";
 const Coin = ({
   id,
   rank,
@@ -12,24 +12,6 @@ const Coin = ({
   volume24a,
   csupply,
 }) => {
-  let classes = "cell";
-  let icon;
-  if (percent_change_7d >= 0) {
-    classes += " green";
-    icon = <IoMdArrowDropup />;
-  } else {
-    classes += " red";
-    icon = <IoMdArrowDropdown />;
-  }
-  let test = "cell";
-  let ic;
-  if (percent_change_24h >= 0) {
-    test += " green";
-    ic = <IoMdArrowDropup />;
-  } else {
-    test += " red";
-    ic = <IoMdArrowDropdown />;
-  }
   return (
     <>
       <div className="row" key={id}>
@@ -42,12 +24,13 @@ const Coin = ({
         <div className="cell" data-title="Price">
           ${price_usd}
         </div>
-        <div className={test} data-title="24h">
-          {ic} {percent_change_24h}%
+        <div className="cell" data-title="24h">
+          <UpDown value={percent_change_24h}></UpDown>
         </div>
-        <div className={classes} data-title="7d">
-          {icon} {percent_change_7d}%
+        <div className="cell" data-title="7h">
+          <UpDown value={percent_change_7d}></UpDown>
         </div>
+
         <div className="cell" data-title="Market Cap">
           ${market_cap_usd}
         </div>
