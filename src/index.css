@@ -82,11 +82,11 @@ body {
   display: table-cell;
 }
 
-.cell.green {
+.green {
   color: green;
 }
 
-.cell.red {
+.red {
   color: red;
 }
 @media screen and (max-width: 580px) {
