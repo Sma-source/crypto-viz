@@ -11,7 +11,7 @@ const UpDown = ({ classes, icon, value }) => {
 
   return (
     <span className={` ${classes}`}>
-      {icon} {value}
+      {icon} {value}%
     </span>
   );
 };
