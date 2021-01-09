@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
-import UpDown from "./UpDown";
+import { RadialChart } from "react-vis";
 import { useGlobalContext } from "./Context";
-const Globals = () => {
+const DomCoin = () => {
   const { globals, setGlobals, globalUrl } = useGlobalContext();
+
   useEffect(() => {
-    const getGlobals = async () => {
+    const getDom = async () => {
       try {
         const res = await fetch(globalUrl);
         const donne = await res.json();
@@ -14,29 +15,37 @@ const Globals = () => {
         console.log(error);
       }
     };
-    getGlobals();
+    getDom();
 
     const interval = setInterval(() => {
-      getGlobals();
+      getDom();
     }, 30000);
 
     return () => clearInterval(interval);
   }, [globalUrl, setGlobals]);
+
   return (
     <div className="container">
-      <h1>Today's Cryptocurrency Prices by Market Cap</h1>
-      {globals.map((global) => {
-        const { total_mcap, mcap_change } = global;
+      {globals.map((dom) => {
+        const { btc_d, eth_d } = dom;
+        const myData = [
+          { angle: parseFloat(btc_d), label: "BTC" },
+          { angle: parseFloat(eth_d), label: "ETH" },
+        ];
         return (
-          <h3 key={total_mcap}>
-            The global crypto market cap is{" "}
-            {Math.trunc(total_mcap / 1000000000)}B, a{" "}
-            <UpDown value={mcap_change} />
-            {mcap_change > 0 ? " increase" : " decrease"} over the last day{" "}
-          </h3>
+          <>
+            <RadialChart
+              className="container"
+              showLabels={true}
+              data={myData}
+              width={200}
+              height={200}
+            />
+          </>
         );
       })}
     </div>
   );
 };
-export default Globals;
+
+export default DomCoin;
