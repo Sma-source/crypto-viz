@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { RadialChart } from "react-vis";
+import { Doughnut } from "@reactchartjs/react-chart.js";
 import { useGlobalContext } from "./Context";
 const DomCoin = () => {
   const { globals, setGlobals, globalUrl } = useGlobalContext();
@@ -7,10 +7,10 @@ const DomCoin = () => {
   useEffect(() => {
     const getDom = async () => {
       try {
-        const res = await fetch(globalUrl);
-        const donne = await res.json();
-        const item = donne;
-        setGlobals(item);
+        const resp = await fetch(globalUrl);
+        const donner = await resp.json();
+        const items = donner;
+        setGlobals(items);
       } catch (error) {
         console.log(error);
       }
@@ -26,22 +26,33 @@ const DomCoin = () => {
 
   return (
     <div className="container">
+      <h1>Crypto Dominance</h1>
       {globals.map((dom) => {
-        const { btc_d, eth_d } = dom;
-        const myData = [
-          { angle: parseFloat(btc_d), label: "BTC" },
-          { angle: parseFloat(eth_d), label: "ETH" },
-        ];
+        const { btc_d, eth_d, active_markets } = dom;
+        const other = Math.round(parseFloat(btc_d + eth_d));
+        const data = {
+          labels: ["BTC", "ETH", "OTHERS"],
+          datasets: [
+            {
+              labels: "Crypto Dominance",
+              data: [btc_d, eth_d, 100 - other],
+              backgroundColor: [
+                "rgb(247, 147, 26)",
+                "rgb(28, 28, 225)",
+                "rgba(255, 206, 86, 0.2)",
+              ],
+            },
+          ],
+        };
         return (
-          <>
-            <RadialChart
-              className="container"
-              showLabels={true}
-              data={myData}
+          <div key={active_markets}>
+            <Doughnut
+              data={data}
               width={200}
-              height={200}
+              height={100}
+              options={{ maintainAspectRatio: false }}
             />
-          </>
+          </div>
         );
       })}
     </div>
