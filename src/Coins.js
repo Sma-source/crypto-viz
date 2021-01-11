@@ -1,6 +1,35 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Coin from "./Coin";
-const Coins = ({ coins }) => {
+import Loading from "./Loading";
+import { useGlobalContext } from "./Context";
+const Coins = () => {
+  const { url } = useGlobalContext();
+  const [coins, setCoins] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    const getCoins = async () => {
+      try {
+        const response = await fetch(url);
+        const data = await response.json();
+        const item = data.data;
+        // console.log(item);
+        setIsLoading(false);
+        setCoins(item);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getCoins();
+    const interval = setInterval(() => {
+      getCoins();
+    }, 30000);
+
+    return () => clearInterval(interval);
+  }, [url]);
+
+  if (isLoading) {
+    return <Loading />;
+  }
   return (
     <>
       <div className="container">
