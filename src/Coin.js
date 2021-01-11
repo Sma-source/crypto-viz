@@ -14,7 +14,7 @@ const Coin = ({
   csupply,
 }) => {
   return (
-    <>
+    <Link to={`/coins/${coin.id}`}>
       <div className="row" key={id}>
         <div className="cell" data-title="#">
           {rank}
@@ -42,7 +42,7 @@ const Coin = ({
           {csupply} {symbol}
         </div>
       </div>
-    </>
+    </Link>
   );
 };
 export default Coin;
