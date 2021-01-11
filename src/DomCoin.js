@@ -1,8 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Doughnut } from "@reactchartjs/react-chart.js";
 import { useGlobalContext } from "./Context";
 const DomCoin = () => {
-  const { globals, setGlobals, globalUrl } = useGlobalContext();
+  const { globalUrl } = useGlobalContext();
+  const [infos, setInfos] = useState([]);
 
   useEffect(() => {
     const getDom = async () => {
@@ -10,7 +11,7 @@ const DomCoin = () => {
         const resp = await fetch(globalUrl);
         const donner = await resp.json();
         const items = donner;
-        setGlobals(items);
+        setInfos(items);
       } catch (error) {
         console.log(error);
       }
@@ -22,12 +23,12 @@ const DomCoin = () => {
     }, 30000);
 
     return () => clearInterval(interval);
-  }, [globalUrl, setGlobals]);
+  }, [globalUrl]);
 
   return (
     <div className="container">
       <h1>Crypto Dominance</h1>
-      {globals.map((dom) => {
+      {infos.map((dom) => {
         const { btc_d, eth_d, active_markets } = dom;
         const other = Math.round(parseFloat(btc_d + eth_d));
         const data = {

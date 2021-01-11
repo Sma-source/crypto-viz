@@ -1,8 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import UpDown from "./UpDown";
 import { useGlobalContext } from "./Context";
 const Globals = () => {
-  const { globals, setGlobals, globalUrl } = useGlobalContext();
+  const [globals, setGlobals] = useState([]);
+  const { globalUrl } = useGlobalContext();
   useEffect(() => {
     const getGlobals = async () => {
       try {
@@ -21,7 +22,7 @@ const Globals = () => {
     }, 30000);
 
     return () => clearInterval(interval);
-  }, [globalUrl, setGlobals]);
+  }, [globalUrl]);
   return (
     <div className="container">
       <h1>Today's Cryptocurrency Prices by Market Cap</h1>
