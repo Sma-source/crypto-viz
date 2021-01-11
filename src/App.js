@@ -9,11 +9,11 @@ import { GlobalProvider } from "./Context";
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <GlobalProvider>
+    <GlobalProvider>
+      <BrowserRouter>
         <Route exact path="/coins" component={Home} />
-      </GlobalProvider>
-    </BrowserRouter>
+      </BrowserRouter>
+    </GlobalProvider>
   );
 };
 
