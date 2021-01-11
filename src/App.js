@@ -12,6 +12,7 @@ const App = () => {
     <GlobalProvider>
       <BrowserRouter>
         <Route exact path="/coins" component={Home} />
+        <Route exact path="/coins/:id" component={Details} />
       </BrowserRouter>
     </GlobalProvider>
   );
