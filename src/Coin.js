@@ -1,5 +1,6 @@
 import React from "react";
 import UpDown from "./UpDown";
+import { Link } from "react-router-dom";
 const Coin = ({
   id,
   rank,
