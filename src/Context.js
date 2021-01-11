@@ -1,13 +1,13 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 
 const GlobalContext = React.createContext();
 
 const GlobalProvider = ({ children }) => {
   const globalUrl = "https://api.coinlore.net/api/global/";
-  const [globals, setGlobals] = useState([]);
+  const url = "https://api.coinlore.net/api/tickers/?limit=15";
 
   return (
-    <GlobalContext.Provider value={{ globalUrl, globals, setGlobals }}>
+    <GlobalContext.Provider value={{ globalUrl, url }}>
       {children}
     </GlobalContext.Provider>
   );
