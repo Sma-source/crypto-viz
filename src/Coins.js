@@ -11,7 +11,7 @@ const Coins = () => {
       try {
         const response = await fetch(url);
         const data = await response.json();
-        const item = data.data;
+        const item = data;
         // console.log(item);
         setIsLoading(false);
         setCoins(item);
@@ -39,9 +39,7 @@ const Coins = () => {
             <div className="cell">Name</div>
             <div className="cell">Price</div>
             <div className="cell">24h</div>
-            <div className="cell">7d</div>
             <div className="cell">Market Cap</div>
-            <div className="cell">Volume</div>
             <div className="cell">Circulation Supply</div>
           </div>
           {coins.map((coin) => {
