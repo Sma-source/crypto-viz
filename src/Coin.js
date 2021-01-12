@@ -12,7 +12,7 @@ const Coin = ({
   return (
     <div className="col-md-3">
       <Link to={`/${id}`}>
-        <div className="cryptos-card">
+        <div className="cryptos-card" key={id}>
           <div className="cryptos-card__text-section">
             <h3 className="cryptos-card__text">{symbol.toUpperCase()}</h3>
             <div className="cryptos-card__subtext-section">

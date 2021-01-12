@@ -8,10 +8,11 @@ const Details = () => {
   useEffect(() => {
     const getDetails = async () => {
       try {
-        const res = await fetch(`${detailsUrl}/?id=${id}`);
+        const res = await fetch(`${detailsUrl}/coins/${id}`);
+
         const data = await res.json();
         const item = data;
-        setDetails(item);
+        setDetails([item]);
       } catch (error) {
         console.log(error);
       }
@@ -28,11 +29,10 @@ const Details = () => {
   return (
     <>
       {details.map((detail) => {
-        const { id, name, price_usd } = detail;
+        const { id, name } = detail;
         return (
           <div key={id}>
             <h3>{name} </h3>
-            <h4>{price_usd} </h4>
           </div>
         );
       })}
