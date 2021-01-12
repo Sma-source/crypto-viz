@@ -32,21 +32,16 @@ const Coins = () => {
   }
   return (
     <>
-      <div className="container">
-        <div className="table">
-          <div className="row header">
-            <div className="cell">#</div>
-            <div className="cell">Name</div>
-            <div className="cell">Price</div>
-            <div className="cell">24h</div>
-            <div className="cell">Market Cap</div>
-            <div className="cell">Circulation Supply</div>
+      <section className="cryptos">
+        <div className="container">
+          <p className="section-header">Cryptocurrency</p>
+          <div className="row">
+            {coins.map((coin) => {
+              return <Coin key={coin.id} {...coin}></Coin>;
+            })}
           </div>
-          {coins.map((coin) => {
-            return <Coin key={coin.id} {...coin}></Coin>;
-          })}
         </div>
-      </div>
+      </section>
     </>
   );
 };

@@ -5,101 +5,410 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #3b3b3b;
-  background: #f6f6f6;
-  font-size: 14px;
-  line-height: 20px;
-  font-weight: 400;
+  font-size: 15px;
+  line-height: 1;
+  font-weight: 500;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+*,
+::after,
+::before {
+  box-sizing: border-box;
 }
 
-@media screen and (max-width: 580px) {
-  body {
-    font-size: 16px;
-    line-height: 22px;
-  }
+#root {
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+#root > div:not(.alert) {
+  flex-grow: 1;
+}
+#root > div:not(.alert) > :last-child:not(.docs) {
+  padding-bottom: 10rem;
+}
+p {
+  font-style: normal;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0;
+  margin: 0px;
 }
 a {
   text-decoration: none;
   color: #000000;
 }
 .container {
-  margin: 0 auto;
-  padding: 40px;
-  max-width: 1000px;
+  position: relative;
+  max-width: 66rem;
 }
 
-.table {
-  margin: 0 0 40px 0;
-  width: 100%;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-  display: table;
+[class*="container"] {
+  margin: 0 auto;
+  padding-right: 1.33rem;
+  padding-left: 1.33rem;
 }
-@media screen and (max-width: 580px) {
-  .table {
-    display: block;
+
+[class*="col"] {
+  flex-basis: 100%;
+  padding: 0 0.665rem;
+}
+
+.col-xs-1 {
+  flex-basis: 8.33333%;
+  max-width: 8.33333%;
+}
+
+.col-xs-2 {
+  flex-basis: 16.66667%;
+  max-width: 16.66667%;
+}
+
+.col-xs-3 {
+  flex-basis: 25%;
+  max-width: 25%;
+}
+
+.col-xs-4 {
+  flex-basis: 33.33333%;
+  max-width: 33.33333%;
+}
+
+.col-xs-5 {
+  flex-basis: 41.66667%;
+  max-width: 41.66667%;
+}
+
+.col-xs-6 {
+  flex-basis: 50%;
+  max-width: 50%;
+}
+
+.col-xs-7 {
+  flex-basis: 58.33333%;
+  max-width: 58.33333%;
+}
+
+.col-xs-8 {
+  flex-basis: 66.66667%;
+  max-width: 66.66667%;
+}
+
+.col-xs-9 {
+  flex-basis: 75%;
+  max-width: 75%;
+}
+
+.col-xs-10 {
+  flex-basis: 83.33333%;
+  max-width: 83.33333%;
+}
+
+.col-xs-11 {
+  flex-basis: 91.66667%;
+  max-width: 91.66667%;
+}
+
+.col-xs-12 {
+  flex-basis: 100%;
+  max-width: 100%;
+}
+
+@media (min-width: 40em) {
+  html,
+  body {
+    font-size: 14px;
+  }
+  .col-sm-1 {
+    flex-basis: 8.33333%;
+    max-width: 8.33333%;
+  }
+  .col-sm-2 {
+    flex-basis: 16.66667%;
+    max-width: 16.66667%;
+  }
+  .col-sm-3 {
+    flex-basis: 25%;
+    max-width: 25%;
+  }
+  .col-sm-4 {
+    flex-basis: 33.33333%;
+    max-width: 33.33333%;
+  }
+  .col-sm-5 {
+    flex-basis: 41.66667%;
+    max-width: 41.66667%;
+  }
+  .col-sm-6 {
+    flex-basis: 50%;
+    max-width: 50%;
+  }
+  .col-sm-7 {
+    flex-basis: 58.33333%;
+    max-width: 58.33333%;
+  }
+  .col-sm-8 {
+    flex-basis: 66.66667%;
+    max-width: 66.66667%;
+  }
+  .col-sm-9 {
+    flex-basis: 75%;
+    max-width: 75%;
+  }
+  .col-sm-10 {
+    flex-basis: 83.33333%;
+    max-width: 83.33333%;
+  }
+  .col-sm-11 {
+    flex-basis: 91.66667%;
+    max-width: 91.66667%;
+  }
+  .col-sm-12 {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+  .col-sm-auto {
+    flex-basis: auto;
+  }
+}
+
+@media (min-width: 60em) {
+  html,
+  body {
+    font-size: 15px;
+  }
+  .col-md-1 {
+    flex-basis: 8.33333%;
+    max-width: 8.33333%;
+  }
+  .col-md-2 {
+    flex-basis: 16.66667%;
+    max-width: 16.66667%;
+  }
+  .col-md-3 {
+    flex-basis: 25%;
+    max-width: 25%;
+  }
+  .col-md-4 {
+    flex-basis: 33.33333%;
+    max-width: 33.33333%;
+  }
+  .col-md-5 {
+    flex-basis: 41.66667%;
+    max-width: 41.66667%;
+  }
+  .col-md-6 {
+    flex-basis: 50%;
+    max-width: 50%;
+  }
+  .col-md-7 {
+    flex-basis: 58.33333%;
+    max-width: 58.33333%;
+  }
+  .col-md-8 {
+    flex-basis: 66.66667%;
+    max-width: 66.66667%;
+  }
+  .col-md-9 {
+    flex-basis: 75%;
+    max-width: 75%;
+  }
+  .col-md-10 {
+    flex-basis: 83.33333%;
+    max-width: 83.33333%;
+  }
+  .col-md-11 {
+    flex-basis: 91.66667%;
+    max-width: 91.66667%;
+  }
+  .col-md-12 {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+  .col-md-auto {
+    flex-basis: auto;
+  }
+}
+
+@media (min-width: 82em) {
+  html,
+  body {
+    font-size: 16px;
+  }
+  .col-lg-1 {
+    flex-basis: 8.33333%;
+    max-width: 8.33333%;
+  }
+  .col-lg-2 {
+    flex-basis: 16.66667%;
+    max-width: 16.66667%;
+  }
+  .col-lg-3 {
+    flex-basis: 25%;
+    max-width: 25%;
+  }
+  .col-lg-4 {
+    flex-basis: 33.33333%;
+    max-width: 33.33333%;
+  }
+  .col-lg-5 {
+    flex-basis: 41.66667%;
+    max-width: 41.66667%;
+  }
+  .col-lg-6 {
+    flex-basis: 50%;
+    max-width: 50%;
+  }
+  .col-lg-7 {
+    flex-basis: 58.33333%;
+    max-width: 58.33333%;
+  }
+  .col-lg-8 {
+    flex-basis: 66.66667%;
+    max-width: 66.66667%;
+  }
+  .col-lg-9 {
+    flex-basis: 75%;
+    max-width: 75%;
+  }
+  .col-lg-10 {
+    flex-basis: 83.33333%;
+    max-width: 83.33333%;
+  }
+  .col-lg-11 {
+    flex-basis: 91.66667%;
+    max-width: 91.66667%;
+  }
+  .col-lg-12 {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+  .col-lg-auto {
+    flex-basis: auto;
   }
 }
 
 .row {
-  display: table-row;
-  background: #f6f6f6;
+  display: flex;
+  flex-flow: row wrap;
+  margin-right: -0.665rem;
+  margin-left: -0.665rem;
 }
-.row:nth-of-type(odd) {
-  background: #e9e9e9;
+[class*="col"] {
+  flex-basis: 100%;
+  padding: 0 0.665rem;
 }
-.row.header {
-  font-weight: 900;
+.col-sm-3 {
+  flex-basis: 25%;
+  max-width: 25%;
+}
+
+.col-xs-6 {
+  flex-basis: 50%;
+  max-width: 50%;
+}
+/* globals */
+/* Wrapper Home */
+#Cryptos .cryptos {
+  background-color: #070a0e;
+  padding-bottom: 4.5rem;
+}
+/* Wrapper Home */
+/* Home Hero */
+#Cryptos .hero {
+  padding: 6.035rem 0 7.315rem;
+  margin-bottom: -3.81rem;
+}
+section.hero {
+  background: #070a0e;
+}
+/* Home Hero */
+/* Home Cryptocurrency List */
+.cryptos {
+  background-color: #070a0e;
+  padding-bottom: 4.5rem;
+}
+
+/* Home Crypto Title */
+#Cryptos .section-header {
   color: #ffffff;
-  background: #000000;
+  font-weight: bold;
+  margin-bottom: 1.25rem;
 }
 
-@media screen and (max-width: 580px) {
-  .row {
-    padding: 14px 0 7px;
-    display: block;
-  }
-  .row.header {
-    padding: 0;
-    height: 6px;
-  }
-  .row.header .cell {
-    display: none;
-  }
-  .row .cell {
-    margin-bottom: 10px;
-  }
-  .row .cell:before {
-    margin-bottom: 3px;
-    content: attr(data-title);
-    min-width: 98px;
-    font-size: 10px;
-    line-height: 10px;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: #969696;
-    display: block;
-  }
+/* Home Crypto Card */
+#Cryptos .cryptos-card {
+  background-color: #141e27;
+  box-shadow: 0px 2px 4px rgba(16, 21, 24, 0.05);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  margin-bottom: 1.25rem;
 }
 
-.cell {
-  padding: 7px 12px;
-  display: table-cell;
+/* Home Crypto Card Text */
+
+#Cryptos .cryptos-card__text-section {
+  min-height: 5.0625rem;
 }
 
-.green {
-  color: green;
+#Cryptos .cryptos-card__text {
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 1.375rem;
+  line-height: 1;
+  margin: 0;
 }
 
-.red {
-  color: red;
-}
-@media screen and (max-width: 580px) {
-  .cell {
-    padding: 2px 16px;
-    display: block;
-  }
+#Cryptos .cryptos-card__text-section > :not(:first-child) {
+  margin-top: 0.75rem;
 }
 
-h1,
-h3 {
-  text-align: center;
+#Cryptos .cryptos-card__subtext-section {
+  display: flex;
+  margin-right: -1.25rem;
+}
+
+#Cryptos .cryptos-card__text {
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 1.375rem;
+  line-height: 1;
+  margin: 0;
+}
+#Cryptos
+  .cryptos-card__subtext-section
+  .cryptos-card__text
+  + .cryptos-card__subtext {
+  align-self: flex-end;
+  margin-bottom: 0.125rem;
+  margin-left: 0.75rem;
+}
+#Cryptos .cryptos-card__subtext {
+  color: #aab8c1;
+  font-weight: normal;
+  font-size: 0.8125rem;
+  line-height: 1;
+  margin: 0;
+}
+#Cryptos .cryptos-card__icon {
+  align-self: center;
+  height: 6rem;
+  width: 6rem;
+  border-radius: 50%;
+  margin-top: 2rem;
+}
+.cryptos-card__subtext--green {
+  color: #00d395;
+  font-size: 0.8125rem;
+  margin-left: 0.75rem;
+}
+.cryptos-card__subtext--red {
+  color: #e17157;
+  margin-left: 0.75rem;
 }

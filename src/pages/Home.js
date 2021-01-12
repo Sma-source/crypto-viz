@@ -4,11 +4,14 @@ import Globals from "../Globals";
 import DomCoin from "../DomCoin";
 const Home = () => {
   return (
-    <>
-      <DomCoin />
-      <Globals />
+    <div id="Cryptos">
+      <section className="hero">
+        <DomCoin />
+        <Globals />
+      </section>
+
       <Coins />
-    </>
+    </div>
   );
 };
 export default Home;
