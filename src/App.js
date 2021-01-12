@@ -11,8 +11,8 @@ const App = () => {
   return (
     <GlobalProvider>
       <BrowserRouter>
-        <Route exact path="/coins" component={Home} />
-        <Route exact path="/coins/:id" component={Details} />
+        <Route exact path="/" component={Home} />
+        <Route exact path="/:id" component={Details} />
       </BrowserRouter>
     </GlobalProvider>
   );
