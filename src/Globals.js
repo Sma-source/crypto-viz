@@ -3,11 +3,11 @@ import UpDown from "./UpDown";
 import { useGlobalContext } from "./Context";
 const Globals = () => {
   const [globals, setGlobals] = useState([]);
-  const { globalUrl } = useGlobalContext();
+  const { ApiUrl } = useGlobalContext();
   useEffect(() => {
     const getGlobals = async () => {
       try {
-        const res = await fetch(globalUrl);
+        const res = await fetch(`${ApiUrl}/global`);
         const donne = await res.json();
         const item = donne;
         setGlobals(item);
@@ -22,7 +22,7 @@ const Globals = () => {
     }, 30000);
 
     return () => clearInterval(interval);
-  }, [globalUrl]);
+  }, [ApiUrl]);
   return (
     <div className="container">
       <h1>Today's Cryptocurrency Prices by Market Cap</h1>
