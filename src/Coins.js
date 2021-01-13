@@ -3,16 +3,21 @@ import Coin from "./Coin";
 import Loading from "./Loading";
 import { useGlobalContext } from "./Context";
 const Coins = () => {
-  const { url } = useGlobalContext();
+  const { ApiUrl } = useGlobalContext();
+  const { list } = useGlobalContext();
   const [coins, setCoins] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
     const getCoins = async () => {
       try {
-        const response = await fetch(url);
+        const response = await fetch(
+          `${ApiUrl}/coins/markets?vs_currency=usd&ids=${list}&order=market_cap_desc`
+        );
+        // console.log(response);
         const data = await response.json();
         const item = data;
-        // console.log(item);
+
         setIsLoading(false);
         setCoins(item);
       } catch (error) {
@@ -25,7 +30,7 @@ const Coins = () => {
     }, 30000);
 
     return () => clearInterval(interval);
-  }, [url]);
+  }, [ApiUrl, list]);
 
   if (isLoading) {
     return <Loading />;

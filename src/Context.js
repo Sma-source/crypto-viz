@@ -1,15 +1,26 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 
 const GlobalContext = React.createContext();
 
 const GlobalProvider = ({ children }) => {
   const globalUrl = "https://api.coinlore.net/api/global/";
-  const url =
-    "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bitcoin,ethereum,ripple,litecoin,bitcoin-cash,maker,stellar,celo-gold,band-protocol,compound-governance-token,the-graph&order=market_cap_desc&per_page=100&page=1&sparkline=false";
-  const detailsUrl = "https://api.coingecko.com/api/v3";
+  const ApiUrl = "https://api.coingecko.com/api/v3";
+  const [list, setList] = useState([
+    "bitcoin",
+    "ethereum",
+    "celo-gold",
+    "maker",
+    " ripple",
+    "bitcoin-cash",
+    "stellar",
+    "band-protocol",
+    "the-graph",
+    "compound-governance-token",
+    "litecoin",
+  ]);
 
   return (
-    <GlobalContext.Provider value={{ globalUrl, url, detailsUrl }}>
+    <GlobalContext.Provider value={{ globalUrl, ApiUrl, list }}>
       {children}
     </GlobalContext.Provider>
   );

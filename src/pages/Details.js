@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useGlobalContext } from "../Context";
 const Details = () => {
-  const { detailsUrl } = useGlobalContext();
+  const { ApiUrl } = useGlobalContext();
   const { id } = useParams();
   const [details, setDetails] = useState([]);
   useEffect(() => {
     const getDetails = async () => {
       try {
-        const res = await fetch(`${detailsUrl}/coins/${id}`);
+        const res = await fetch(`${ApiUrl}/coins/${id}`);
 
         const data = await res.json();
         const item = data;
@@ -24,7 +24,7 @@ const Details = () => {
     }, 30000);
 
     return () => clearInterval(interval);
-  }, [id, detailsUrl]);
+  }, [id, ApiUrl]);
 
   return (
     <>
