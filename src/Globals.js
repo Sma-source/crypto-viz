@@ -2,15 +2,15 @@ import React, { useState, useEffect } from "react";
 import UpDown from "./UpDown";
 import { useGlobalContext } from "./Context";
 const Globals = () => {
-  const [globals, setGlobals] = useState([]);
+  const [globals, setGlobals] = useState({});
   const { ApiUrl } = useGlobalContext();
   useEffect(() => {
     const getGlobals = async () => {
       try {
         const res = await fetch(`${ApiUrl}/global`);
         const donne = await res.json();
-        const item = donne;
-        setGlobals(item);
+        const items = donne.data;
+        setGlobals({ ...items });
       } catch (error) {
         console.log(error);
       }
@@ -25,18 +25,19 @@ const Globals = () => {
   }, [ApiUrl]);
   return (
     <div className="container">
-      <h1>Today's Cryptocurrency Prices by Market Cap</h1>
-      {globals.map((global) => {
-        const { total_mcap, mcap_change } = global;
-        return (
-          <h3 key={total_mcap}>
-            The global crypto market cap is{" "}
-            {Math.trunc(total_mcap / 1000000000)}B, a{" "}
-            <UpDown value={mcap_change} />
-            {mcap_change > 0 ? " increase" : " decrease"} over the last day{" "}
-          </h3>
-        );
-      })}
+      <h4>Au cours des dernières 24 heures</h4>
+
+      <h1>
+        Le Marché est en
+        {globals.market_cap_change_percentage_24h_usd > 0
+          ? " hausse"
+          : " baisse"}
+        <UpDown
+          value={
+            Math.round(globals.market_cap_change_percentage_24h_usd * 100) / 100
+          }
+        />
+      </h1>
     </div>
   );
 };
