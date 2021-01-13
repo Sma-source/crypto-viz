@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import UpDown from "./UpDown";
 import { useGlobalContext } from "./Context";
+import Loading from "./Loading";
 const Globals = () => {
+  const [loading, setLoading] = useState(true);
   const [globals, setGlobals] = useState({});
   const { ApiUrl } = useGlobalContext();
   useEffect(() => {
@@ -10,7 +12,8 @@ const Globals = () => {
         const res = await fetch(`${ApiUrl}/global`);
         const donne = await res.json();
         const items = donne.data;
-        setGlobals({ ...items });
+        setLoading(false);
+        setGlobals(items);
       } catch (error) {
         console.log(error);
       }
@@ -23,6 +26,10 @@ const Globals = () => {
 
     return () => clearInterval(interval);
   }, [ApiUrl]);
+
+  if (loading) {
+    return <Loading />;
+  }
   return (
     <div className="container">
       <h4>Au cours des dernières 24 heures</h4>
