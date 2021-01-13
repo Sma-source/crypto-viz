@@ -28,7 +28,12 @@ const Globals = () => {
   }, [ApiUrl]);
 
   if (loading) {
-    return <Loading />;
+    return (
+      <div className="container">
+        <h4>Au cours des dernières 24 heures</h4>
+        <Loading />;
+      </div>
+    );
   }
   return (
     <div className="container">
