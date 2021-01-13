@@ -3,7 +3,6 @@ import React, { useContext, useState } from "react";
 const GlobalContext = React.createContext();
 
 const GlobalProvider = ({ children }) => {
-  const globalUrl = "https://api.coinlore.net/api/global/";
   const ApiUrl = "https://api.coingecko.com/api/v3";
   const [list, setList] = useState([
     "bitcoin",
