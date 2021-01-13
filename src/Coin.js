@@ -14,7 +14,7 @@ const Coin = ({
       <Link to={`/${id}`}>
         <div className="cryptos-card" key={id}>
           <div className="cryptos-card__text-section">
-            <h3 className="cryptos-card__text">{symbol}</h3>
+            <h3 className="cryptos-card__text">{symbol.toUpperCase()}</h3>
             <div className="cryptos-card__subtext-section">
               <h3 className="cryptos-card__text">${current_price}</h3>
               <UpDown
