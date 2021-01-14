@@ -19,6 +19,7 @@ const Coin = ({
               <h3 className="cryptos-card__text">${current_price}</h3>
               <UpDown
                 value={Math.round(price_change_percentage_24h * 100) / 100}
+                classe={"cryptos-card__subtext"}
               ></UpDown>
             </div>
           </div>

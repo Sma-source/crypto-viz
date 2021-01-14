@@ -11,7 +11,8 @@ const Globals = () => {
       try {
         const res = await fetch(`${ApiUrl}/global`);
         const donne = await res.json();
-        const items = donne.data;
+        const items = donne.data.market_cap_change_percentage_24h_usd;
+        console.log(items);
         setLoading(false);
         setGlobals(items);
       } catch (error) {
@@ -35,22 +36,21 @@ const Globals = () => {
       </div>
     );
   }
-  return (
-    <div className="container">
-      <h4>Au cours des dernières 24 heures</h4>
+  if (globals) {
+    return (
+      <div className="container">
+        <h4>Au cours des dernières 24 heures</h4>
 
-      <h1>
-        Le Marché est en
-        {globals.market_cap_change_percentage_24h_usd > 0
-          ? " hausse"
-          : " baisse"}
-        <UpDown
-          value={
-            Math.round(globals.market_cap_change_percentage_24h_usd * 100) / 100
-          }
-        />
-      </h1>
-    </div>
-  );
+        <h1>
+          Le Marché est en
+          {globals > 0 ? " hausse" : " baisse"}
+          <UpDown
+            value={Math.round(globals * 100) / 100}
+            classe={"cryptos-card__subtext"}
+          ></UpDown>
+        </h1>
+      </div>
+    );
+  }
 };
 export default Globals;

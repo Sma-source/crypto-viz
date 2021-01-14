@@ -1,6 +1,6 @@
 import React from "react";
 import { IoMdArrowDropup, IoMdArrowDropdown } from "react-icons/io";
-const UpDown = ({ classes, icon, value }) => {
+const UpDown = ({ classes, icon, value, classe }) => {
   if (value >= 0) {
     classes = "--green";
     icon = <IoMdArrowDropup />;
@@ -10,7 +10,7 @@ const UpDown = ({ classes, icon, value }) => {
   }
 
   return (
-    <span className={`cryptos-card__subtext${classes}`}>
+    <span className={` ${classe}${classes}`}>
       {icon} {value}%
     </span>
   );

@@ -413,3 +413,11 @@ section.hero {
   color: #e17157;
   margin-left: 0.75rem;
 }
+
+.cryptos-chart__subtext--green {
+  color: #00d395;
+  font-size: 0.8125rem;
+}
+.cryptos-chart__subtext--red {
+  color: #e17157;
+}
