@@ -421,3 +421,14 @@ section.hero {
 .cryptos-chart__subtext--red {
   color: #e17157;
 }
+
+.details-price {
+  color: #aab8c1;
+  font-size: xx-large;
+  padding-bottom: 0.5em;
+}
+
+.details-price-wrapper {
+  margin-top: 2em;
+  padding-bottom: 2em;
+}
