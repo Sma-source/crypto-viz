@@ -32,7 +32,7 @@ const Details = () => {
             `${ApiUrl}/coins/markets/?${currency}&ids=${id}`
           ).then((response) => response.json()),
         ]);
-        // console.log(day.prices);
+        console.log(day);
         setDetails({
           day: formatData(day.prices),
           week: formatData(week.prices),
@@ -54,9 +54,7 @@ const Details = () => {
 
   return (
     <>
-      <div>
-        <DetailsChart data={details} />
-      </div>
+      <DetailsChart data={details} />
     </>
   );
 };
