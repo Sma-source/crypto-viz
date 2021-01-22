@@ -1,6 +1,7 @@
 import React from "react";
 
-const CoinData = () => {
+const CoinData = ({ data }) => {
+  const { detail } = data;
   return <div></div>;
 };
 
