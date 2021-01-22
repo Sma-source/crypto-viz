@@ -77,10 +77,15 @@ const DetailsChart = ({ data }) => {
       );
     }
   };
+  const getDetailsName = () => {
+    if (detail) {
+      return `${detail.name} price`;
+    }
+  };
   const chart = {
     datasets: [
       {
-        label: ` price`,
+        label: getDetailsName(),
         data: determineTimeFormat(),
         fill: false,
         borderWidth: 2.5,
