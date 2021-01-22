@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import CoinData from "../CoinData";
 import { useGlobalContext } from "../Context";
 import DetailsChart from "../DetailsChart";
 const Details = () => {
@@ -55,6 +56,7 @@ const Details = () => {
   return (
     <>
       <DetailsChart data={details} />
+      <CoinData data={details} />
     </>
   );
 };
