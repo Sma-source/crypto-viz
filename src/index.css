@@ -422,6 +422,8 @@ section.hero {
   color: #e17157;
 }
 
+/* detailsChart component */
+
 .details-price {
   color: #aab8c1;
   font-size: xx-large;
@@ -431,4 +433,28 @@ section.hero {
 .details-price-wrapper {
   margin-top: 2em;
   padding-bottom: 2em;
+}
+
+.details-icon {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+}
+
+.details-wrapper-name {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.details-name {
+  display: flex;
+  -moz-box-align: baseline;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+.details-name h1 {
+  margin-right: 0.5em;
 }
