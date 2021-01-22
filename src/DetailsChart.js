@@ -1,10 +1,10 @@
 import React, { useRef, useEffect, useState } from "react";
-import Chartjs from "chart.js";
+// import Chartjs from "chart.js";
 import { Line } from "@reactchartjs/react-chart.js";
 import UpDown from "./UpDown";
 
 const DetailsChart = ({ data }) => {
-  const chartRef = useRef();
+  // const chartRef = useRef();
   const { day, week, year, detail } = data;
   const [timeFormat, setTimeFormat] = useState("24h");
 
