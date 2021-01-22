@@ -33,7 +33,7 @@ const Details = () => {
             `${ApiUrl}/coins/markets/?${currency}&ids=${id}`
           ).then((response) => response.json()),
         ]);
-        console.log(day);
+        // console.log(day);
         setDetails({
           day: formatData(day.prices),
           week: formatData(week.prices),
