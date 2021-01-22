@@ -65,14 +65,27 @@ const DetailsChart = ({ data }) => {
   const renderPrice = () => {
     if (detail) {
       return (
-        <div className="details-price-wrapper">
-          <p className="my-0 details-price">
-            ${detail.current_price.toFixed(2)}
-          </p>
-          <UpDown
-            value={detail.price_change_percentage_24h.toFixed(2)}
-            classe={"cryptos-chart__subtext"}
-          ></UpDown>
+        <div className="container">
+          <div className="row">
+            <div className="details-wrapper-name">
+              <img
+                className="details-icon"
+                src={detail.image}
+                alt={detail.name}
+              />
+              <div className="details-name">
+                <h1>{detail.name}</h1>
+                <h2>{detail.symbol.toUpperCase()} </h2>
+              </div>
+            </div>
+          </div>
+          <div className="details-price-wrapper">
+            <p className="details-price">${detail.current_price.toFixed(2)}</p>
+            <UpDown
+              value={detail.price_change_percentage_24h.toFixed(2)}
+              classe={"cryptos-chart__subtext"}
+            ></UpDown>
+          </div>
         </div>
       );
     }
