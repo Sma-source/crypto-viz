@@ -54,10 +54,10 @@ const Details = () => {
   }, [id, ApiUrl]);
 
   return (
-    <>
+    <div id="Cryptos">
       <DetailsChart data={details} />
       <CoinData data={details} />
-    </>
+    </div>
   );
 };
 export default Details;

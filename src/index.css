@@ -314,6 +314,7 @@ a {
 /* globals */
 /* Wrapper Home */
 #Cryptos .cryptos {
+  background-color: #070a0e;
   padding-bottom: 4.5rem;
 }
 /* Wrapper Home */
@@ -323,10 +324,12 @@ a {
   margin-bottom: -3.81rem;
 }
 section.hero {
+  background: #070a0e;
 }
 /* Home Hero */
 /* Home Cryptocurrency List */
 .cryptos {
+  background-color: #070a0e;
   padding-bottom: 4.5rem;
 }
 
@@ -409,7 +412,14 @@ section.hero {
   color: #e17157;
   margin-left: 0.75rem;
 }
-
+.--green {
+  color: #00d395;
+  margin-left: 0.75rem;
+}
+.--red {
+  color: #e17157;
+  margin-left: 0.75rem;
+}
 .cryptos-chart__subtext--green {
   color: #00d395;
   font-size: 0.8125rem;
@@ -454,4 +464,18 @@ section.hero {
 .details-name h1 {
   margin-right: 0.5em;
   margin-left: 0.5em;
+}
+
+/* Globals Component */
+
+.container.globals-info {
+  text-align: center;
+  color: #ffffff;
+}
+
+.container.globals-info h4 {
+  font-size: 1.5rem;
+}
+.container.globals-info h1 {
+  font-size: 3rem;
 }
