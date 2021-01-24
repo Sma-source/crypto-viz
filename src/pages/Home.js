@@ -1,17 +1,18 @@
 import React from "react";
 import Coins from "../Coins";
 import Globals from "../Globals";
-import DomCoin from "../DomCoin";
+
 const Home = () => {
   return (
-    <div id="Cryptos">
-      <section className="hero">
-        <DomCoin />
-        <Globals />
-      </section>
+    <main>
+      <div id="Cryptos">
+        <section className="hero">
+          <Globals />
+        </section>
 
-      <Coins />
-    </div>
+        <Coins />
+      </div>
+    </main>
   );
 };
 export default Home;
