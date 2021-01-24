@@ -7,12 +7,13 @@ const Coins = () => {
   const { list } = useGlobalContext();
   const [coins, setCoins] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [currency, setCurrency] = useState("usd");
 
   useEffect(() => {
     const getCoins = async () => {
       try {
         const response = await fetch(
-          `${ApiUrl}/coins/markets?vs_currency=usd&ids=${list}&order=market_cap_desc`
+          `${ApiUrl}/coins/markets?vs_currency=${currency}&ids=${list}&order=market_cap_desc`
         );
         // console.log(response);
         const data = await response.json();
@@ -25,12 +26,13 @@ const Coins = () => {
       }
     };
     getCoins();
+
     const interval = setInterval(() => {
       getCoins();
     }, 30000);
 
     return () => clearInterval(interval);
-  }, [ApiUrl, list]);
+  }, [ApiUrl, list, currency]);
 
   if (isLoading) {
     return <Loading />;
@@ -40,6 +42,9 @@ const Coins = () => {
       <section className="cryptos">
         <div className="container">
           <p className="section-header">Cryptocurrency</p>
+          <button onClick={() => setCurrency("usd")}>$</button>
+          <button onClick={() => setCurrency("eur")}>€</button>
+
           <div className="row">
             {coins.map((coin) => {
               return <Coin key={coin.id} {...coin}></Coin>;
