@@ -32,7 +32,7 @@ const Globals = () => {
     return (
       <div className="container globals-info">
         <h4>Au cours des dernières 24 heures</h4>
-        <Loading />;
+        <Loading />
       </div>
     );
   }
