@@ -16,6 +16,7 @@ const GlobalProvider = ({ children }) => {
     "the-graph",
     "compound-governance-token",
     "litecoin",
+    "polkadot",
   ]);
 
   return (
