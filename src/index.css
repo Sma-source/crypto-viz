@@ -314,7 +314,6 @@ a {
 /* globals */
 /* Wrapper Home */
 #Cryptos .cryptos {
-  background-color: #070a0e;
   padding-bottom: 4.5rem;
 }
 /* Wrapper Home */
@@ -324,12 +323,10 @@ a {
   margin-bottom: -3.81rem;
 }
 section.hero {
-  background: #070a0e;
 }
 /* Home Hero */
 /* Home Cryptocurrency List */
 .cryptos {
-  background-color: #070a0e;
   padding-bottom: 4.5rem;
 }
 
