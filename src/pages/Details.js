@@ -36,13 +36,14 @@ const Details = () => {
           ).then((response) => response.json()),
         ]);
         // console.log(day);
-        setIsLoading(false);
+
         setDetails({
           day: formatData(day.prices),
           week: formatData(week.prices),
           year: formatData(year.prices),
           detail: detail[0],
         });
+        setIsLoading(false);
       } catch (error) {
         console.log(error);
       }
@@ -61,7 +62,7 @@ const Details = () => {
   }
 
   return (
-    <div>
+    <div className="container">
       <DetailsChart data={details} />
       <CoinData data={details} />
     </div>
