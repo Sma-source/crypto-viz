@@ -466,6 +466,9 @@ section.hero {
   margin-left: 0.5em;
 }
 
+.chartjs-render-monitor {
+  width: 100% !important;
+}
 /* Globals Component */
 
 .container.globals-info {
