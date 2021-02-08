@@ -3,10 +3,12 @@ import { useParams } from "react-router-dom";
 import CoinData from "../CoinData";
 import { useGlobalContext } from "../Context";
 import DetailsChart from "../DetailsChart";
+import Loading from "../Loading";
 const Details = () => {
   const { ApiUrl } = useGlobalContext();
   const { id } = useParams();
   const [details, setDetails] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
   const currency = "vs_currency=usd";
   const formatData = (data) => {
     return data.map((el) => {
@@ -34,6 +36,7 @@ const Details = () => {
           ).then((response) => response.json()),
         ]);
         // console.log(day);
+        setIsLoading(false);
         setDetails({
           day: formatData(day.prices),
           week: formatData(week.prices),
@@ -53,8 +56,12 @@ const Details = () => {
     // return () => clearInterval(interval);
   }, [id, ApiUrl]);
 
+  if (isLoading) {
+    return <Loading />;
+  }
+
   return (
-    <div id="Cryptos">
+    <div>
       <DetailsChart data={details} />
       <CoinData data={details} />
     </div>
