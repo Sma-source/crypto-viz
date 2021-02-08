@@ -65,7 +65,7 @@ const DetailsChart = ({ data }) => {
   const renderPrice = () => {
     if (detail) {
       return (
-        <div className="container">
+        <div className="container title">
           <div className="row">
             <div className="details-wrapper-name">
               <img
@@ -100,11 +100,13 @@ const DetailsChart = ({ data }) => {
       {
         label: getDetailsName(),
         data: determineTimeFormat(),
+
         fill: false,
+        showLine: true, // disable for a single dataset
         borderWidth: 2.5,
         backgroundColor: "rgb(255, 99, 132)",
         borderColor: "rgba(255, 99, 132, 0.8)",
-        pointRadius: 0,
+        pointRadius: 1,
         pointHoverRadius: 5,
         pointHoverBackgroundColor: "white",
         pointHoverBorderColor: "white",
@@ -115,6 +117,22 @@ const DetailsChart = ({ data }) => {
   };
 
   const options = {
+    maintainAspectRatio: false,
+    responsive: false,
+    layout: {
+      padding: {
+        left: 0,
+        right: 0,
+        top: 0,
+        bottom: 0,
+      },
+    },
+    legend: {
+      labels: {
+        // This more specific font property overrides the global property
+        fontColor: "red",
+      },
+    },
     scales: {
       xAxes: [
         {
@@ -123,38 +141,54 @@ const DetailsChart = ({ data }) => {
         },
       ],
     },
+    tooltips: {
+      mode: "nearest",
+    },
+    events: ["mousemove", "mouseout", "click", "touchstart", "touchmove"],
+    animation: {
+      duration: 0, // general animation time
+    },
+    hover: {
+      animationDuration: 0, // duration of animations when hovering an item
+    },
+    responsiveAnimationDuration: 0, // animation duration after a resize
+    // showLines: false, // disable for all datasets
   };
 
   return (
-    <div className="container">
-      <div>{renderPrice()}</div>
-      {/* <div>
+    <>
+      <div className="row">
+        <div className="col-md-6">
+          <div>{renderPrice()}</div>
+          {/* <div>
         <canvas ref={chartRef} id="myChart" width={400} height={400}></canvas>
       </div> */}
-      <div>
-        <Line data={chart} options={options} height="450" width="700" />
+        </div>
+        <div className="col-md-6">
+          <Line data={chart} options={options} />
+          <div className="chart-button mt-1">
+            <button
+              onClick={() => setTimeFormat("24h")}
+              className="btn btn-outline-secondary btn-sm"
+            >
+              24h
+            </button>
+            <button
+              onClick={() => setTimeFormat("7d")}
+              className="btn btn-outline-secondary btn-sm mx-1"
+            >
+              7d
+            </button>
+            <button
+              onClick={() => setTimeFormat("1y")}
+              className="btn btn-outline-secondary btn-sm"
+            >
+              1y
+            </button>
+          </div>
+        </div>
       </div>
-      <div className="chart-button mt-1">
-        <button
-          onClick={() => setTimeFormat("24h")}
-          className="btn btn-outline-secondary btn-sm"
-        >
-          24h
-        </button>
-        <button
-          onClick={() => setTimeFormat("7d")}
-          className="btn btn-outline-secondary btn-sm mx-1"
-        >
-          7d
-        </button>
-        <button
-          onClick={() => setTimeFormat("1y")}
-          className="btn btn-outline-secondary btn-sm"
-        >
-          1y
-        </button>
-      </div>
-    </div>
+    </>
   );
 };
 export default DetailsChart;
