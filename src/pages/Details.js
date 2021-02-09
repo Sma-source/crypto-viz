@@ -62,10 +62,12 @@ const Details = () => {
   }
 
   return (
-    <div className="container">
-      <DetailsChart data={details} />
-      <CoinData data={details} />
-    </div>
+    <section id="details-page">
+      <div className="container-large">
+        <DetailsChart data={details} />
+        <CoinData data={details} />
+      </div>
+    </section>
   );
 };
 export default Details;
