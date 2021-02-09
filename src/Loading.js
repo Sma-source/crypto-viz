@@ -3,7 +3,9 @@ const Loading = () => {
   return (
     <>
       <div className="container">
-        <div class="loader">Loading...</div>
+        <div className="row">
+          <div class="loader">Loading...</div>
+        </div>
       </div>
     </>
   );
