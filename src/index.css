@@ -528,3 +528,33 @@ section.hero {
 .container.globals-info h1 {
   font-size: 3rem;
 }
+
+/* CoinData component */
+#details-page .coindata {
+  margin-top: 3.75rem;
+}
+
+#details-page .coindata-cards {
+  margin-bottom: 1.33rem;
+}
+#details-page .coindata-cards_background {
+  background-color: #121b23;
+  height: 11.375rem;
+  width: 100%;
+}
+
+#details-page .coindata-cards_content {
+  display: flex;
+  flex-direction: column;
+  height: 11.375rem;
+  background-color: transparent;
+  color: #657786;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1.875rem;
+}
+
+#details-page .coindata-cards_img {
+  margin-bottom: 3rem;
+  transform: translateY(20%);
+}
