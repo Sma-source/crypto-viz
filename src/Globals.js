@@ -28,24 +28,95 @@ const Globals = () => {
     return () => clearInterval(interval);
   }, [ApiUrl]);
 
-  if (loading) {
-    return (
-      <div className="container globals-info">
-        <h4>Au cours des dernières 24 heures</h4>
-        <Loading />
-      </div>
-    );
-  }
+  // if (loading) {
+  //   return (
+  //     <div className="container">
+  //       <h2>Au cours des dernières 24 heures</h2>
+  //       <Loading />
+  //     </div>
+  //   );
+  // }
   if (globals) {
     return (
-      <div className="container globals-info">
-        <h4>Au cours des dernières 24 heures</h4>
-
-        <h1>
-          Le Marché est en
-          {globals > 0 ? " hausse" : " baisse"}
-          <UpDown value={Math.round(globals * 100) / 100} classe={""}></UpDown>
-        </h1>
+      <div className="row">
+        <div className="col-sm-6">
+          <div className="panel">
+            <div className="panel-header">
+              <h4>Au cours des dernieres 24h</h4>
+            </div>
+            <div className="totals-content">
+              <div className="text-largest">
+                <span>
+                  {" "}
+                  Le Marché est en
+                  {globals > 0 ? " hausse" : " baisse"}
+                  <UpDown
+                    value={Math.round(globals * 100) / 100}
+                    classe={""}
+                  ></UpDown>
+                </span>
+                {/* <span className="change up">+0.89%</span> */}
+              </div>
+              <div className="bars-row">
+                <div>
+                  <label> Top 3 Crypto</label>
+                  <div className="market-bar supply">
+                    <div className="row">
+                      <div className="col-xs-6">
+                        <label htmlFor="">BTC</label>
+                      </div>
+                      <div className="col-xs-6 text-right">30.19%</div>
+                    </div>
+                    <div className="bar supply">
+                      <div
+                        className="fill supply"
+                        style={{ width: "30.19%" }}
+                      ></div>
+                    </div>
+                  </div>
+                  <div className="market-bar supply">
+                    <div className="row">
+                      <div className="col-xs-6">
+                        <label htmlFor="">BTC</label>
+                      </div>
+                      <div className="col-xs-6 text-right">30.19%</div>
+                    </div>
+                    <div className="bar supply">
+                      <div
+                        className="fill supply"
+                        style={{ width: "30.19%" }}
+                      ></div>
+                    </div>
+                  </div>
+                  <div className="market-bar supply">
+                    <div className="row">
+                      <div className="col-xs-6">
+                        <label htmlFor="">BTC</label>
+                      </div>
+                      <div className="col-xs-6 text-right">30.19%</div>
+                    </div>
+                    <div className="bar supply">
+                      <div
+                        className="fill supply"
+                        style={{ width: "30.19%" }}
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="demi row">
+                <div className="col-xs-6">
+                  <label> 24h Supply volume </label>
+                  <div className="text-large total">$69,343,547.55</div>
+                </div>
+                <div className="col-xs-6 text-right">
+                  <label> # of Suppliers</label>
+                  <div className="text-large total">279631</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
