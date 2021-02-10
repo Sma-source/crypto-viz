@@ -6,12 +6,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: #3b3b3b;
   font-size: 15px;
-  line-height: 1;
-  font-weight: 500;
-  min-height: 100vh;
+  /* line-height: 1;
+  font-weight: 500; */
   margin: 0;
   padding: 0;
-  background-color: #141e27;
+  /* background-color: #141e27; */
 }
 *,
 ::after,
@@ -19,7 +18,7 @@ body {
   box-sizing: border-box;
 }
 
-#root {
+/* #root {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -30,7 +29,7 @@ body {
 }
 #root > div:not(.alert) > :last-child:not(.docs) {
   padding-bottom: 10rem;
-}
+} */
 p {
   font-style: normal;
   font-size: 16px;
@@ -42,14 +41,6 @@ a {
   text-decoration: none;
   color: #000000;
 }
-.container {
-  position: relative;
-  max-width: 66rem;
-}
-.container-large {
-  position: relative;
-  max-width: 82em;
-}
 [class*="container"] {
   margin: 0 auto;
   padding-right: 1.33rem;
@@ -59,6 +50,14 @@ a {
 [class*="col"] {
   flex-basis: 100%;
   padding: 0 0.665rem;
+}
+.container {
+  position: relative;
+  max-width: 66rem;
+}
+.container-large {
+  position: relative;
+  max-width: 82em;
 }
 
 .col-xs-1 {
@@ -315,6 +314,32 @@ a {
   max-width: 50%;
 }
 /* globals */
+/* header */
+header {
+  padding: 1rem 0;
+  background: #7512f7;
+  min-height: 80px;
+  display: block;
+}
+
+header .brand {
+  background-image: url("https://compound.finance/images/compound-logo.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: transparent;
+  width: 127px;
+  height: 27px;
+}
+.brand {
+  display: inline-block;
+}
+header .logo {
+  z-index: 25;
+}
+.row.align-middle {
+  align-items: center;
+}
+/* header */
 /* spinner loader */
 .loader,
 .loader:after {
@@ -358,9 +383,50 @@ a {
   }
 }
 
-/* Wrapper Home */
+/* Hero */
+#Cryptos .hero {
+  background-color: #7512f7;
+}
+section.hero {
+  background: #7512f7;
+  margin-bottom: -3.75rem;
+  padding: 1.2635rem 0 7.315rem;
+}
+
+#Cryptos .hero h2 {
+  color: #ffffff;
+  margin-bottom: 0.52rem;
+  padding-top: 5rem;
+}
+
+/* Globals */
+.panel {
+  background: #ffffff;
+  box-shadow: 0px 2px 4px rgb(16 21 24 / 5%);
+  border-radius: 4px;
+  margin-bottom: 1.33rem;
+}
+.panel-header {
+  display: flex;
+  flex-flow: inherit;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.1rem;
+  padding: 1rem 1.75rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+#Cryptos h4 {
+  margin-bottom: 0;
+}
+.panel-header h4 {
+  margin: 0;
+}
+
+#Cryptos .panel .totals-content {
+  padding: 0 1.995rem;
+}
 #Cryptos .cryptos {
-  background-color: #070a0e;
+  /* background-color: #070a0e; */
   padding-bottom: 4.5rem;
 }
 /* Wrapper Home */
@@ -369,15 +435,11 @@ a {
   padding: 6.035rem 0 7.315rem;
   margin-bottom: -3.81rem;
 }
-section.hero {
+/* .hero {
   background: #070a0e;
-}
+} */
 /* Home Hero */
 /* Home Cryptocurrency List */
-.cryptos {
-  background-color: #070a0e;
-  padding-bottom: 4.5rem;
-}
 
 /* Home Crypto Title */
 #Cryptos .section-header {
@@ -488,11 +550,16 @@ section.hero {
 }
 
 .details-icon {
-  height: 3rem;
-  width: 3rem;
+  width: 4rem;
+
+  margin-top: 2em;
   border-radius: 50%;
 }
-
+canvas {
+  padding-top: 10em;
+  width: 22rem;
+  height: 24rem;
+}
 .details-wrapper-name {
   display: flex;
   flex-direction: row;
@@ -512,9 +579,10 @@ section.hero {
   margin-left: 0.5em;
 }
 
-.chartjs-render-monitor {
-  width: 100% !important;
-}
+/* .chartjs-render-monitor {
+  width: 50rem !important;
+  height: 55em !important;
+} */
 /* Globals Component */
 
 .container.globals-info {
@@ -530,10 +598,24 @@ section.hero {
 }
 
 /* CoinData component */
+#details-page {
+  /* padding-top: 109px;
+  padding-bottom: 45px;
+  background: #070a0e;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  z-index: 0; */
+  background-color: #070a0e;
+  min-height: 100vh;
+  padding-top: 4rem;
+}
 #details-page .coindata {
   margin-top: 3.75rem;
 }
-
+.coindata p {
+  color: #ffffff;
+}
 #details-page .coindata-cards {
   margin-bottom: 1.33rem;
 }
