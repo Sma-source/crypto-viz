@@ -1,18 +1,22 @@
 import React from "react";
 import Coins from "../Coins";
 import Globals from "../Globals";
+import Hero from "../Hero";
 
 const Home = () => {
   return (
-    <main>
-      <div id="Cryptos">
-        <section className="hero">
-          <Globals />
-        </section>
+    <div id="Cryptos">
+      <Hero />
 
-        <Coins />
-      </div>
-    </main>
+      <section>
+        <div className="container">
+          <div className="content">
+            <Globals />
+            <Coins />
+          </div>
+        </div>
+      </section>
+    </div>
   );
 };
 export default Home;
