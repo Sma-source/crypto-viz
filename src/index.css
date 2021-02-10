@@ -425,16 +425,165 @@ section.hero {
 #Cryptos .panel .totals-content {
   padding: 0 1.995rem;
 }
+
 #Cryptos .cryptos {
   /* background-color: #070a0e; */
   padding-bottom: 4.5rem;
 }
+
+#Cryptos .panel .totals-content .text-largest {
+  display: flex;
+  align-items: flex-end;
+  margin: 1.995rem 0;
+}
+.text-largest {
+  font-size: 1.4em;
+}
+#Cryptos span.change.up {
+  color: #00d395;
+}
+
+#Cryptos span.change {
+  margin-left: 0.5em;
+  font-size: 0.8em;
+}
+
+#Cryptos .panel .totals-content .bars-row {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 0 0 1.995rem;
+}
+
+label {
+  font-weight: 600;
+  font-size: 12px;
+  color: #aab8c1;
+}
+.market-bar {
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+.market-bar.supply {
+  color: #00d395;
+}
+.text-right {
+  text-align: right;
+}
+.market-bar.supply .bar {
+  background: #d4f6ec;
+}
+.market-bar .bar {
+  width: 100%;
+  height: 4px;
+  margin-top: 0.5rem;
+}
+#Cryptos .panel .totals-content .bars-row .market-bar .bar {
+  border-radius: 4px;
+}
+.market-bar.supply .fill {
+  background: #00d395;
+}
+#Cryptos .panel .totals-content .bars-row .market-bar .fill {
+  border-radius: 4px;
+}
+.market-bar .fill {
+  height: 4px;
+}
+
+#Cryptos .panel .totals-content .demi.row {
+  padding: 1.33rem 0 1.995rem;
+}
+.text-large {
+  font-size: 1.2em;
+}
+#Cryptos .total {
+  font-size: 1.2em;
+}
+#Cryptos .panel .totals-content .demi.row .text-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.panel-labels {
+  display: flex;
+  padding: 1rem 1.75rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  align-items: center;
+}
+#Cryptos .panel__labels [class*="col"] {
+  padding: 0 0;
+}
+
+#Cryptos .asset {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 1.25rem 1.75rem;
+  border-left: 2px solid transparent;
+  padding-left: 1.625rem;
+  text-transform: none;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  transition: none;
+  flex-wrap: nowrap;
+}
+#Cryptos a.asset:hover {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 1.25rem 1.75rem;
+  border-left: 2px solid #7512f7;
+  padding-left: 1.625rem;
+  text-transform: none;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  transition: none;
+  flex-wrap: nowrap;
+  background: #dde8ee;
+}
+.identity {
+  display: flex;
+  align-items: center;
+}
+#Cryptos .asset .icon {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+.identity .icon {
+  margin-right: 1rem;
+}
+.icon {
+  flex-shrink: 0;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border-radius: 50%;
+  width: 1.8rem;
+  height: 1.8rem;
+  min-width: 1.8rem;
+  min-height: 1.8rem;
+}
+#Cryptos .asset span.change,
+#Cryptos .asset .symbol {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.9em;
+}
+#Cryptos .asset .symbol {
+  margin: 0;
+}
+.identity .symbol {
+  margin-left: 1rem;
+  color: #acbbc2;
+}
+
 /* Wrapper Home */
 /* Home Hero */
-#Cryptos .hero {
-  padding: 6.035rem 0 7.315rem;
-  margin-bottom: -3.81rem;
-}
+
 /* .hero {
   background: #070a0e;
 } */
@@ -446,6 +595,16 @@ section.hero {
   color: #ffffff;
   font-weight: bold;
   margin-bottom: 1.25rem;
+}
+
+#Cryptos .asset .text-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+#Cryptos .asset [class*="col"] {
+  padding: 0 0;
 }
 
 /* Home Crypto Card */
@@ -513,12 +672,10 @@ section.hero {
 }
 .cryptos-card__subtext--green {
   color: #00d395;
-  font-size: 0.8125rem;
-  margin-left: 0.75rem;
 }
 .cryptos-card__subtext--red {
   color: #e17157;
-  margin-left: 0.75rem;
+  font-size: 0.9em;
 }
 .--green {
   color: #00d395;
@@ -639,4 +796,38 @@ canvas {
 #details-page .coindata-cards_img {
   margin-bottom: 3rem;
   transform: translateY(20%);
+}
+
+/* Footer */
+footer {
+  padding: 1.33rem 0;
+  background: #070a0e;
+}
+
+footer .bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.33rem;
+  color: #acbbc2;
+  font-size: 0.9rem;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+@media (max-width: 40em) {
+  footer .bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 0;
+    margin-top: 0;
+  }
+}
+footer .bottom label:first-of-type {
+  color: #657786;
+}
+@media (max-width: 40em) {
+  footer label {
+    margin-left: 0.9975rem;
+  }
 }
