@@ -7,6 +7,7 @@ import "./App.css";
 
 import { GlobalProvider } from "./Context";
 import Header from "./Header";
+import Footer from "./Footer";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
         <Header />
         <Route exact path="/" component={Home} />
         <Route exact path="/:id" component={Details} />
+        <Footer />
       </BrowserRouter>
     </GlobalProvider>
   );
