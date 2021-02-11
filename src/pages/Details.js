@@ -58,16 +58,28 @@ const Details = () => {
   }, [id, ApiUrl]);
 
   if (isLoading) {
-    return <Loading />;
+    return (
+      <section id="details-page">
+        <div className="container-large">
+          <Loading />
+        </div>
+      </section>
+    );
   }
 
   return (
-    <section id="details-page">
-      <div className="container-large">
-        <DetailsChart data={details} />
-        <CoinData data={details} />
+    <>
+      <div id="MarketDetail">
+        <section className="hero">
+          <div className="container">
+            <DetailsChart data={details} />
+          </div>
+        </section>
+        <section>
+          <CoinData data={details} />
+        </section>
       </div>
-    </section>
+    </>
   );
 };
 export default Details;
