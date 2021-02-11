@@ -712,11 +712,17 @@ label {
   margin-top: 2em;
   border-radius: 50%;
 }
-canvas {
-  padding-top: 10em;
-  width: 22rem;
-  height: 24rem;
+.chart-container {
+  display: flex;
+  align-items: center;
+  padding-top: 2em;
 }
+canvas {
+  margin: auto;
+  padding-top: 3em;
+  width: 45vw;
+}
+
 .details-wrapper-name {
   display: flex;
   flex-direction: row;
@@ -777,7 +783,7 @@ canvas {
   margin-bottom: 1.33rem;
 }
 #details-page .coindata-cards_background {
-  background-color: #121b23;
+  background-color: #ffffff;
   height: 11.375rem;
   width: 100%;
 }
@@ -830,4 +836,165 @@ footer .bottom label:first-of-type {
   footer label {
     margin-left: 0.9975rem;
   }
+}
+
+/* details */
+
+#MarketDetail .hero {
+  padding-top: 3.15rem;
+  background-color: #7512f7;
+}
+
+#MarketDetail .hero .breadcrumb {
+  display: flex;
+  color: #070a0e;
+  margin-bottom: 1.125rem;
+}
+
+#MarketDetail .hero .breadcrumb__text {
+  font-size: 0.875rem;
+  line-height: 1;
+}
+
+#MarketDetail .hero .row {
+  margin: 0;
+}
+
+.row.align-between {
+  justify-content: space-between;
+}
+
+#MarketDetail .identity .icon {
+  height: 2.875rem;
+  width: 2.875rem;
+}
+
+.identity .icon {
+  margin-right: 1rem;
+}
+
+#MarketDetail .identity .name {
+  color: #ffffff;
+  font-size: 1.75rem;
+}
+
+#MarketDetail .hero .breadcrumb-link {
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1;
+  text-transform: none;
+}
+
+#MarketDetail .hero .breadcrumb > * {
+  margin: 0 0.3rem;
+}
+
+#MarketDetail .hero .breadcrumb-separator {
+  border-style: solid;
+  border-width: 2px 2px 0 0;
+  content: "";
+  display: inline-block;
+  height: 8px;
+  width: 8px;
+  transform: rotate(-135deg);
+  margin-top: 3px;
+  border-color: #657786;
+  transform: rotate(45deg);
+  transition: all 0.2s ease-in-out;
+}
+
+#MarketDetail .balance {
+  min-width: 7rem;
+  color: #070a0e;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0 0.5rem;
+  text-align: center;
+}
+
+#MarketDetail .balance .subtitle {
+  color: #ffffff;
+  font-size: 1.125rem;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+#MarketDetail .graph__tab-group {
+  width: 100%;
+  margin-top: 2.375rem;
+}
+
+.tab-group {
+  display: inline-block;
+}
+.tab-group__options {
+  width: 100%;
+  display: inline-flex;
+  z-index: 1;
+}
+
+#MarketDetail .graph__tab-group .tab-group__option {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06rem;
+  margin-left: 0;
+  padding: 0.875rem 0;
+  text-align: center;
+  text-transform: uppercase;
+  width: 9.6875rem;
+}
+
+.tab-group__option--active--green {
+  color: #00d395;
+  border-color: #00d395;
+}
+.tab-group__option--active {
+  color: #070a0e;
+  padding: 0.5rem 0;
+  border-bottom: 2px solid #070a0e;
+}
+.tab-group__option {
+  cursor: pointer;
+  color: #ccd6dd;
+  font-size: 1.25rem;
+  height: 100%;
+  padding: 0.5rem 0;
+}
+
+.tab-group__option--landing-grey {
+  color: #657786;
+}
+#MarketDetail .graph__tab-group .tab-group__line {
+  background-color: rgba(255, 255, 255, 0.1);
+  height: 1px;
+  margin-top: -1px;
+}
+.tab-group__line {
+  background-color: #ccd6dd;
+  height: 2px;
+  width: 100%;
+  margin-top: -2px;
+  z-index: 0;
+}
+.tab-group__option:not(:first-child) {
+  margin-left: 1.5rem;
+}
+
+/* CoinData */
+
+#MarketDetail .calculation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 1.5rem 1.75rem;
+  color: #657786;
+}
+
+#MarketDetail .calculation .description {
+  color: #aab8c1;
+}
+.col-sm-6.coindata {
+  margin: auto;
 }
