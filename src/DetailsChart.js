@@ -65,28 +65,33 @@ const DetailsChart = ({ data }) => {
   const renderPrice = () => {
     if (detail) {
       return (
-        <div className="container title">
-          <div className="row">
-            <div className="details-wrapper-name">
-              <img
-                className="details-icon"
-                src={detail.image}
-                alt={detail.name}
-              />
-              <div className="details-name">
-                <h1>{detail.name}</h1>
-                <h2>{detail.symbol.toUpperCase()} </h2>
-              </div>
-            </div>
-          </div>
-          <div className="details-price-wrapper">
-            <p className="details-price">${detail.current_price.toFixed(2)}</p>
-            <UpDown
-              value={detail.price_change_percentage_24h.toFixed(2)}
-              classe={"cryptos-chart__subtext"}
-            ></UpDown>
-          </div>
-        </div>
+        <>
+          {/* <img className="details-icon" src={detail.image} alt={detail.name} /> */}
+
+          <p>${detail.current_price.toFixed(2)}</p>
+          <UpDown
+            value={detail.price_change_percentage_24h.toFixed(2)}
+            classe={"cryptos-chart__subtext"}
+          ></UpDown>
+
+          {/* <h1>{detail.name}</h1>
+          <h2>{detail.symbol.toUpperCase()} </h2>
+
+          <p className="details-price">${detail.current_price.toFixed(2)}</p>
+          <UpDown
+            value={detail.price_change_percentage_24h.toFixed(2)}
+            classe={"cryptos-chart__subtext"}
+          ></UpDown> */}
+        </>
+      );
+    }
+  };
+  const renderImg = () => {
+    if (detail) {
+      return (
+        <>
+          <img className="icon" src={detail.image} alt={detail.name} />
+        </>
       );
     }
   };
@@ -104,10 +109,10 @@ const DetailsChart = ({ data }) => {
         fill: false,
         showLine: true, // disable for a single dataset
         borderWidth: 2.5,
-        backgroundColor: "rgb(255, 99, 132)",
-        borderColor: "rgba(255, 99, 132, 0.8)",
+        backgroundColor: "#00d395",
+        borderColor: "#00d395",
         pointRadius: 1,
-        pointHoverRadius: 5,
+        pointHoverRadius: 3,
         pointHoverBackgroundColor: "white",
         pointHoverBorderColor: "white",
         pointHoverBorderWidth: 5,
@@ -117,7 +122,7 @@ const DetailsChart = ({ data }) => {
   };
 
   const options = {
-    maintainAspectRatio: false,
+    maintainAspectRatio: true,
     responsive: false,
     layout: {
       padding: {
@@ -128,9 +133,10 @@ const DetailsChart = ({ data }) => {
       },
     },
     legend: {
+      display: false,
       labels: {
         // This more specific font property overrides the global property
-        fontColor: "red",
+        display: false,
       },
     },
     scales: {
@@ -155,17 +161,8 @@ const DetailsChart = ({ data }) => {
     // showLines: false, // disable for all datasets
   };
 
-  return (
-    <>
-      <div className="row">
-        <div className="col-md-6">
-          <div>{renderPrice()}</div>
-          {/* <div>
-        <canvas ref={chartRef} id="myChart" width={400} height={400}></canvas>
-      </div> */}
-        </div>
-        <div className="col-md-6">
-          <Line data={chart} options={options} />
+  {
+    /* <div className="col-md-6">
           <div className="chart-button mt-1">
             <button
               onClick={() => setTimeFormat("24h")}
@@ -186,9 +183,50 @@ const DetailsChart = ({ data }) => {
               1y
             </button>
           </div>
+        </div> */
+  }
+  if (detail) {
+    return (
+      <>
+        <div className="breadcrumb">
+          <a href="#" className="breadcrumb-link">
+            Markets
+          </a>
+          <span className="breadcrumb-separator"></span>
+          <p className="breadcrumb__text">ETH</p>
         </div>
-      </div>
-    </>
-  );
+        <div className="row align-between">
+          <div className="identity">
+            <span className="icon">{renderImg()}</span>
+            <div>
+              <div className="name">{detail.name} </div>
+            </div>
+          </div>
+          <div className="row">
+            <div className="balance">
+              <div>Total</div>
+              <div className="subtitle">0.19%</div>
+            </div>
+            <div className="balance">
+              <div>Total</div>
+              <div className="subtitle">0.19%</div>
+            </div>
+            <div className="balance">
+              <div>Total</div>
+              <div className="subtitle">0.19%</div>
+            </div>
+            <div className="balance">
+              <div>Total</div>
+              <div className="subtitle">0.19%</div>
+            </div>
+          </div>
+        </div>
+
+        <div className="chart-container">
+          <Line data={chart} options={options} />
+        </div>
+      </>
+    );
+  }
 };
 export default DetailsChart;
