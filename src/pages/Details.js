@@ -59,11 +59,16 @@ const Details = () => {
 
   if (isLoading) {
     return (
-      <section id="details-page">
-        <div className="container-large">
+      <div id="MarketDetail">
+        <section className="hero">
+          <div className="container">
+            <Loading />
+          </div>
+        </section>
+        <section>
           <Loading />
-        </div>
-      </section>
+        </section>
+      </div>
     );
   }
 
