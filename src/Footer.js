@@ -5,7 +5,7 @@ const Footer = () => {
     <footer id="footer">
       <div className="container-large">
         <div className="bottom">
-          <label className="small">© 2020 Compound Labs, Inc.</label>
+          <label className="small">© 2021 CoinData</label>
           <div className="social"></div>
         </div>
       </div>
