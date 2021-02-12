@@ -323,12 +323,13 @@ header {
 }
 
 header .brand {
-  background-image: url("https://compound.finance/images/compound-logo.svg");
+  /* background-image: url("https://compound.finance/images/compound-logo.svg");
   background-repeat: no-repeat;
   background-size: contain;
-  background-color: transparent;
-  width: 127px;
-  height: 27px;
+  background-color: transparent; */
+  width: 4rem;
+  height: 2rem;
+  color: #dde8ee;
 }
 .brand {
   display: inline-block;
