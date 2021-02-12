@@ -32,7 +32,7 @@ const Details = () => {
             `${ApiUrl}/coins/${id}/market_chart?${currency}&days=365`
           ).then((response) => response.json()),
           fetch(
-            `${ApiUrl}/coins/markets/?${currency}&ids=${id}`
+            `${ApiUrl}/coins/markets/?${currency}&ids=${id}&price_change_percentage=1h%2C24h%2C7d%2C30d`
           ).then((response) => response.json()),
         ]);
         // console.log(day);
