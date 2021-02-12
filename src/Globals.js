@@ -28,14 +28,18 @@ const Globals = () => {
     // return () => clearInterval(interval);
   }, [ApiUrl]);
 
-  // if (loading) {
-  //   return (
-  //     <div className="container">
-  //       <h2>Au cours des dernières 24 heures</h2>
-  //       <Loading />
-  //     </div>
-  //   );
-  // }
+  if (loading) {
+    return (
+      <div className="row">
+        <div className="col-sm-6">
+          <div className="panel">
+            <h2>Au cours des dernières 24 heures</h2>
+          </div>
+          <Loading />
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="row">
