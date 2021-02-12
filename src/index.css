@@ -999,3 +999,7 @@ footer .bottom label:first-of-type {
 .col-sm-6.coindata {
   margin: auto;
 }
+
+#Marketdeatil {
+  overflow-y: hidden;
+}
