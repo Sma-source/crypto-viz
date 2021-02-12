@@ -204,8 +204,15 @@ const DetailsChart = ({ data }) => {
           </div>
           <div className="row">
             <div className="balance">
-              <div>Total</div>
-              <div className="subtitle">0.19%</div>
+              <div>1H</div>
+              <div className="subtitle">
+                <UpDown
+                  value={detail.price_change_percentage_1h_in_currency.toFixed(
+                    2
+                  )}
+                  classe={"cryptos-card__subtext"}
+                ></UpDown>
+              </div>
             </div>
             <div className="balance">
               <div>Total</div>
