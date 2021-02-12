@@ -193,7 +193,7 @@ const DetailsChart = ({ data }) => {
             Markets
           </a>
           <span className="breadcrumb-separator"></span>
-          <p className="breadcrumb__text">ETH</p>
+          <p className="breadcrumb__text">{detail.symbol.toUpperCase()}</p>
         </div>
         <div className="row align-between">
           <div className="identity">
