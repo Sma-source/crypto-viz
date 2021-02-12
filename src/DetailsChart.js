@@ -204,7 +204,11 @@ const DetailsChart = ({ data }) => {
           </div>
           <div className="row">
             <div className="balance">
-              <div>1H</div>
+              <div>Price</div>
+              <div className="subtitle">${detail.current_price}</div>
+            </div>
+            <div className="balance">
+              <div>1h</div>
               <div className="subtitle">
                 <UpDown
                   value={detail.price_change_percentage_1h_in_currency.toFixed(
@@ -215,16 +219,26 @@ const DetailsChart = ({ data }) => {
               </div>
             </div>
             <div className="balance">
-              <div>Total</div>
-              <div className="subtitle">0.19%</div>
+              <div>24h</div>
+              <div className="subtitle">
+                <UpDown
+                  value={detail.price_change_percentage_24h_in_currency.toFixed(
+                    2
+                  )}
+                  classe={"cryptos-card__subtext"}
+                ></UpDown>
+              </div>
             </div>
             <div className="balance">
-              <div>Total</div>
-              <div className="subtitle">0.19%</div>
-            </div>
-            <div className="balance">
-              <div>Total</div>
-              <div className="subtitle">0.19%</div>
+              <div>7d</div>
+              <div className="subtitle">
+                <UpDown
+                  value={detail.price_change_percentage_7d_in_currency.toFixed(
+                    2
+                  )}
+                  classe={"cryptos-card__subtext"}
+                ></UpDown>
+              </div>
             </div>
           </div>
         </div>
