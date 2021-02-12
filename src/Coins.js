@@ -38,7 +38,7 @@ const Coins = () => {
     return (
       <div className="panel">
         <div className="panel-header">
-          <h4>All Markets</h4>
+          <h4>Cryptomonnaies</h4>
         </div>
         <div className="panel-labels">
           <div className="col-xs-4 col-sm-5">
@@ -63,7 +63,7 @@ const Coins = () => {
       <>
         <div className="panel">
           <div className="panel-header">
-            <h4>All Markets</h4>
+            <h4>Cryptomonnaies</h4>
           </div>
           <div className="panel-labels">
             <div className="col-xs-4 col-sm-5">

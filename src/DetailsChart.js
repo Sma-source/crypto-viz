@@ -190,7 +190,7 @@ const DetailsChart = ({ data }) => {
       <>
         <div className="breadcrumb">
           <a href="#" className="breadcrumb-link">
-            Markets
+            Cryptomonnaie
           </a>
           <span className="breadcrumb-separator"></span>
           <p className="breadcrumb__text">{detail.symbol.toUpperCase()}</p>
@@ -204,7 +204,7 @@ const DetailsChart = ({ data }) => {
           </div>
           <div className="row">
             <div className="balance">
-              <div>Price</div>
+              <div>Prix</div>
               <div className="subtitle">${detail.current_price}</div>
             </div>
             <div className="balance">
@@ -230,7 +230,7 @@ const DetailsChart = ({ data }) => {
               </div>
             </div>
             <div className="balance">
-              <div>7d</div>
+              <div>7j</div>
               <div className="subtitle">
                 <UpDown
                   value={detail.price_change_percentage_7d_in_currency.toFixed(
