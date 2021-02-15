@@ -2,7 +2,6 @@ import React from "react";
 import Coins from "../Coins";
 import Globals from "../Globals";
 import Hero from "../Hero";
-import Title from "../Title";
 
 const Home = () => {
   return (
