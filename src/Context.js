@@ -7,16 +7,11 @@ const GlobalProvider = ({ children }) => {
   const [list, setList] = useState([
     "bitcoin",
     "ethereum",
-    "celo-gold",
-    "maker",
-    " ripple",
+    "ripple",
     "bitcoin-cash",
-    "stellar",
-    "band-protocol",
-    "the-graph",
-    "compound-governance-token",
     "litecoin",
     "polkadot",
+    "tether",
   ]);
 
   return (
