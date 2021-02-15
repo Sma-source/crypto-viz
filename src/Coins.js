@@ -75,9 +75,6 @@ const Coins = () => {
             <div className="col-xs-3 text-right">
               <label>Changement</label>
             </div>
-            <div className="col-xs-3 text-right">
-              <label>Volume Total</label>
-            </div>
           </div>
 
           <div className="assets">
