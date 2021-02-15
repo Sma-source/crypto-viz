@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import UpDown from "./UpDown";
 import { useGlobalContext } from "./Context";
 import Loading from "./Loading";
+import GlobalsIcon from "./GlobalsIcon";
 const Globals = () => {
   const [loading, setLoading] = useState(true);
   const [globals, setGlobals] = useState([]);
@@ -30,7 +31,7 @@ const Globals = () => {
 
   if (loading) {
     return (
-      <div className="row">
+      <div className="row pt-2">
         <div className="col-sm-6">
           <div className="panel">
             <h2>Au cours des dernières 24 heures</h2>
@@ -42,7 +43,7 @@ const Globals = () => {
   }
 
   return (
-    <div className="row">
+    <div className="row pt-2">
       <div className="col-sm-6">
         <div className="panel">
           <div className="panel-header">
@@ -54,6 +55,7 @@ const Globals = () => {
               ongoing_icos,
               market_cap_percentage,
               active_cryptocurrencies,
+              markets,
             } = global;
             const { btc, eth, usdt } = market_cap_percentage;
 
@@ -79,7 +81,7 @@ const Globals = () => {
                 <div className="bars-row">
                   <div>
                     <label> Top 3 Crypto</label>
-                    <div className="market-bar supply">
+                    <div className="market-bar supply bitcoin">
                       <div className="row">
                         <div className="col-xs-6">
                           <label htmlFor="">BTC</label>
@@ -97,7 +99,7 @@ const Globals = () => {
                         ></div>
                       </div>
                     </div>
-                    <div className="market-bar supply">
+                    <div className="market-bar supply ethereum">
                       <div className="row">
                         <div className="col-xs-6">
                           <label htmlFor="">ETH</label>
@@ -115,7 +117,7 @@ const Globals = () => {
                         ></div>
                       </div>
                     </div>
-                    <div className="market-bar supply">
+                    <div className="market-bar supply tether">
                       <div className="row">
                         <div className="col-xs-6">
                           <label htmlFor="">USDT</label>
@@ -135,11 +137,11 @@ const Globals = () => {
                 </div>
                 <div className="demi row">
                   <div className="col-xs-6">
-                    <label> 24h Supply volume </label>
-                    <div className="text-large total">$69,343,547.55</div>
+                    <label> Marchés</label>
+                    <div className="text-large total">{markets} </div>
                   </div>
                   <div className="col-xs-6 text-right">
-                    <label>total crypto monnaie</label>
+                    <label>Cryptomonnaie active</label>
                     <div className="text-large total">
                       {active_cryptocurrencies}
                     </div>
@@ -150,6 +152,7 @@ const Globals = () => {
           })}
         </div>
       </div>
+      <GlobalsIcon className="GlobalsIcon" />
     </div>
   );
 };
