@@ -317,8 +317,8 @@ a {
 /* header */
 header {
   padding: 1rem 0;
-  background: #7512f7;
-  min-height: 80px;
+  background: #1652f0;
+  min-height: 90px;
   display: block;
 }
 
@@ -386,12 +386,11 @@ header .logo {
 
 /* Hero */
 #Cryptos .hero {
-  background-color: #7512f7;
+  background-color: #1652f0;
 }
 section.hero {
-  background: #7512f7;
-  margin-bottom: -3.75rem;
-  padding: 1.2635rem 0 7.315rem;
+  margin-bottom: -7rem;
+  padding: 1.3rem 0 9rem;
 }
 
 #Cryptos .hero h2 {
@@ -400,6 +399,13 @@ section.hero {
   padding-top: 5rem;
 }
 
+.hero h1 {
+  min-width: 0;
+  max-width: 660px;
+  font-size: 60px;
+  font-weight: 900;
+  margin-top: 24px;
+}
 /* Globals */
 .panel {
   background: #ffffff;
@@ -468,6 +474,9 @@ label {
 }
 .text-right {
   text-align: right;
+}
+.text-center {
+  text-align: center;
 }
 .market-bar.supply .bar {
   background: #d4f6ec;
