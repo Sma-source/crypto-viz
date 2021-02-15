@@ -2,6 +2,7 @@ import React from "react";
 import Coins from "../Coins";
 import Globals from "../Globals";
 import Hero from "../Hero";
+import Title from "../Title";
 
 const Home = () => {
   return (
@@ -11,8 +12,9 @@ const Home = () => {
       <section>
         <div className="container">
           <div className="content">
-            <Globals />
             <Coins />
+
+            <Globals />
           </div>
         </div>
       </section>
