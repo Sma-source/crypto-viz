@@ -31,9 +31,6 @@ const Coin = ({
           classe={"cryptos-card__subtext"}
         ></UpDown>
       </div>
-      <div className="col-xs-3 text-right">
-        <div>{total_volume}</div>
-      </div>
 
       {/* <div className="cryptos-card" key={id}>
         <div className="cryptos-card__text-section">
