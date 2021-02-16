@@ -2,6 +2,7 @@ import React from "react";
 import Coins from "../Coins";
 import Globals from "../Globals";
 import Hero from "../Hero";
+import MockupSection from "../MockupSection";
 
 const Home = () => {
   return (
@@ -12,10 +13,10 @@ const Home = () => {
         <div className="container">
           <div className="content">
             <Coins />
-
             <Globals />
           </div>
         </div>
+        <MockupSection />
       </section>
     </div>
   );
