@@ -571,7 +571,7 @@ label {
   flex-wrap: wrap;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   padding: 1.25rem 1.75rem;
-  border-left: 2px solid #7512f7;
+  border-left: 2px solid #1652f0;
   padding-left: 1.625rem;
   text-transform: none;
   font-size: 1rem;
@@ -1049,4 +1049,84 @@ footer .bottom label:first-of-type {
 
 #Marketdetail {
   overflow-y: hidden;
+}
+
+/*  Mockup Section */
+
+.iphone,
+.ipad {
+  display: block;
+  color: #fff;
+  text-align: center;
+  font-family: "SF Pro Display", Helvetica Neue, Arial, sans-serif;
+  letter-spacing: -0.022em;
+  font-size: 2.5vmin;
+  text-shadow: 0 0 0.5em #000;
+  background-color: #000;
+  background-size: auto 200%, cover;
+  background-repeat: no-repeat, no-repeat;
+  border: solid #111;
+  margin-bottom: 2em;
+
+  box-shadow: 0 0.5em 2em 0.2em rgba(0, 0, 0, 0.33), 0 0 0 0.5px #000 inset;
+  transition: all 0.1s linear, line-height 0s linear;
+  background-position: 50% 100%, center;
+  transform-origin: bottom center;
+}
+.iphone:hover,
+.ipad:hover {
+  color: transparent;
+  text-shadow: 0 0 0em transparent;
+  background-position: 50% -100%, center center;
+  transition: all 0.15s linear, line-height 5s linear;
+  line-height: 0vmin;
+}
+
+.iphone {
+  width: 23.7623762376vmin;
+  height: 51.0891089109vmin;
+  line-height: 51.4455445545vmin;
+  border-width: 1.5207920792vmin;
+  border-radius: 4.0550130098vmin;
+  background-image: linear-gradient(rgba(0, 0, 0, 0), #111),
+    url(https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8dHJhZGluZ3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60);
+  z-index: 200;
+}
+
+.ipad {
+  margin-left: 2em;
+  height: 85.8vmin;
+  width: 60vmin;
+  line-height: 85.8vmin;
+  border-width: 3vmin;
+  border-radius: 4.2857142857vmin;
+  background-image: linear-gradient(rgba(0, 0, 0, 0), #111),
+    url("https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8dHJhZGluZ3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60");
+  z-index: 100;
+}
+
+.mockup {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.mock {
+  background: #1652f0;
+}
+
+.center-block {
+  text-align: center;
+}
+
+.center-block h2 {
+  box-sizing: border-box;
+  margin: 0;
+  margin-bottom: 0px;
+  min-width: 0;
+  color: #fafafa;
+  text-align: center;
+  margin-bottom: 60px;
+  font-weight: 900;
+  padding: 0 24px;
 }
