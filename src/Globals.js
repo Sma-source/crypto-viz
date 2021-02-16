@@ -44,6 +44,7 @@ const Globals = () => {
 
   return (
     <div className="row pt-2">
+      <GlobalsIcon className="GlobalsIcon" />
       <div className="col-sm-6">
         <div className="panel">
           <div className="panel-header">
@@ -152,7 +153,6 @@ const Globals = () => {
           })}
         </div>
       </div>
-      <GlobalsIcon className="GlobalsIcon" />
     </div>
   );
 };
