@@ -43,7 +43,7 @@ const Globals = () => {
   }
 
   return (
-    <div className="row pt-2">
+    <div className="row pt-2 pb-1">
       <GlobalsIcon className="GlobalsIcon" />
       <div className="col-sm-6">
         <div className="panel">
