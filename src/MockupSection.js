@@ -1,5 +1,5 @@
 import React from "react";
-import { FaCoins } from "react-icons/fa";
+import { FaCoins, FaApple, FaGooglePlay, FaDesktop } from "react-icons/fa";
 const MockupSection = () => {
   return (
     <>
@@ -20,8 +20,28 @@ const MockupSection = () => {
               Buy, sell, and trade cryptocurrencies <br /> from your laptop,
               tablet, or mobile <br /> device.
             </h2>
-            <button>Apple</button>
-            <button>Google</button>
+            <div class="flex social-btns">
+              <a class="app-btn blu flex vert" href="http:apple.com">
+                <FaApple />
+                <p>
+                  Available on the <br /> <span class="big-txt">App Store</span>
+                </p>
+              </a>
+
+              <a class="app-btn blu flex vert" href="http:google.com">
+                <FaGooglePlay />
+                <p>
+                  Get it on <br /> <span class="big-txt">Google Play</span>
+                </p>
+              </a>
+
+              <a class="app-btn blu flex vert" href="http:alphorm.com">
+                <FaDesktop />
+                <p>
+                  Application <br /> <span class="big-txt">Desktop</span>
+                </p>
+              </a>
+            </div>
           </div>
         </div>
       </div>
