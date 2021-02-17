@@ -897,6 +897,7 @@ footer .bottom label:first-of-type {
 #MarketDetail .hero {
   padding-top: 3.15rem;
   /* background-color: #7512f7; */
+  background-color: #f9fafb;
 }
 
 #MarketDetail .hero .breadcrumb {
