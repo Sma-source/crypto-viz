@@ -205,7 +205,7 @@ const DetailsChart = ({ data }) => {
           <div className="row">
             <div className="balance">
               <div>Prix</div>
-              <div className="subtitle">${detail.current_price}</div>
+              <div className="subtitle">${detail.current_price.toFixed(2)}</div>
             </div>
             <div className="balance">
               <div>1h</div>
