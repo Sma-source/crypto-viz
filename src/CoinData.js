@@ -1,4 +1,5 @@
 import React from "react";
+import { Bar } from "@reactchartjs/react-chart.js";
 
 const CoinData = ({ data }) => {
   const { detail } = data;
@@ -10,6 +11,54 @@ const CoinData = ({ data }) => {
     const x = Math.abs(Number(num)) / Number("1.0e+" + (unit - r)).toFixed(2);
     return x.toFixed(2) + units[Math.floor(unit / 3) - 2];
   }
+  const renderHighPrice24h = () => {
+    if (detail) {
+      return `${detail.high_24h}`;
+    }
+  };
+  const renderLowPrice24h = () => {
+    if (detail) {
+      return `${detail.low_24h}`;
+    }
+  };
+  const renderHighAll = () => {
+    if (detail) {
+      return `${detail.ath}`;
+    }
+  };
+  const renderLowAll = () => {
+    if (detail) {
+      return `${detail.atl}`;
+    }
+  };
+  const numero = {
+    labels: ["24h", "Toutes"],
+    datasets: [
+      {
+        label: "Prix le plus haut",
+        data: [renderHighPrice24h(), renderHighAll()],
+        backgroundColor: "rgb(255, 99, 132)",
+      },
+      {
+        minBarLength: 10,
+        label: "Prix le plus bas",
+        data: [renderLowPrice24h(), renderLowAll()],
+        backgroundColor: "rgb(54, 162, 235)",
+      },
+    ],
+  };
+
+  const options = {
+    scales: {
+      yAxes: [
+        {
+          ticks: {
+            beginAtZero: true,
+          },
+        },
+      ],
+    },
+  };
   if (detail) {
     return (
       <>
@@ -19,14 +68,11 @@ const CoinData = ({ data }) => {
               <div className="col-sm-6 coindata">
                 <div className="panel">
                   <div className="panel-header">
-                    <h4>Title</h4>
+                    <h4>Variation Prix</h4>
                   </div>
-                  <div className="content">
+                  <div className="content pt-1 pb-1">
                     <div className="form">
-                      <div className="calculation">
-                        <span className="description">texte</span>
-                        <span className="value">Number</span>
-                      </div>
+                      <Bar data={numero} options={options} />
                     </div>
                   </div>
                 </div>
@@ -43,6 +89,10 @@ const CoinData = ({ data }) => {
                         <span className="value">${detail.current_price} </span>
                       </div>
                       <div className="calculation">
+                        <span className="description">Popularité</span>
+                        <span className="value">{detail.market_cap_rank} </span>
+                      </div>
+                      <div className="calculation">
                         <span className="description">
                           Capitalisation boursière
                         </span>
@@ -50,8 +100,9 @@ const CoinData = ({ data }) => {
                           ${getNumber(detail.market_cap)}{" "}
                         </span>
                       </div>
+
                       <div className="calculation">
-                        <span className="description">Volume total</span>
+                        <span className="description">Volume (24 heures)</span>
                         <span className="value">
                           ${getNumber(detail.total_volume)}{" "}
                         </span>
@@ -62,28 +113,8 @@ const CoinData = ({ data }) => {
                         </span>
                         <span className="value">
                           {getNumber(detail.circulating_supply)} &nbsp;
-                          {detail.symbol}
+                          {detail.symbol.toUpperCase()}
                         </span>
-                      </div>
-                      <div className="calculation">
-                        <span className="description">Le plus haut 24h</span>
-                        <span className="value">${detail.high_24h} </span>
-                      </div>
-                      <div className="calculation">
-                        <span className="description">Le plus bas 24h</span>
-                        <span className="value">${detail.low_24h} </span>
-                      </div>
-                      <div className="calculation">
-                        <span className="description">
-                          Valeur historique haute
-                        </span>
-                        <span className="value">${detail.ath} </span>
-                      </div>
-                      <div className="calculation">
-                        <span className="description">
-                          Valeur historique basse
-                        </span>
-                        <span className="value">${detail.atl} </span>
                       </div>
                     </div>
                   </div>
