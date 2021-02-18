@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState } from "react";
 // import Chartjs from "chart.js";
 import { Line } from "@reactchartjs/react-chart.js";
 import UpDown from "./UpDown";
+import { Link } from "react-router-dom";
 
 const DetailsChart = ({ data }) => {
   // const chartRef = useRef();
@@ -189,9 +190,9 @@ const DetailsChart = ({ data }) => {
     return (
       <>
         <div className="breadcrumb">
-          <a href="#" className="breadcrumb-link">
+          <Link to="/" className="breadcrumb-link">
             Cryptomonnaie
-          </a>
+          </Link>
           <span className="breadcrumb-separator"></span>
           <p className="breadcrumb__text">{detail.symbol.toUpperCase()}</p>
         </div>
