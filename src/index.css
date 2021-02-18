@@ -929,7 +929,7 @@ footer .bottom label:first-of-type {
 }
 
 #MarketDetail .identity .name {
-  color: #ffffff;
+  /* color: #ffffff; */
   font-size: 1.75rem;
 }
 
