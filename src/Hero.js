@@ -1,14 +1,16 @@
 import React from "react";
 
+import { Link } from "react-router-dom";
 const Hero = () => {
   return (
     <section className="hero">
       <div className="container">
         <div className="col-sm-6 coindata text-center">
-          <h3>CoinData</h3>
           <h2 className="titre">Info, graphique et Prix des Cryptomonnaies</h2>
-          <h3>Info, graphique et Prix des Cryptomonnaies</h3>
-          <button>Commencer maintenant</button>
+          <h3>Rester informé du cours de vos crypto préférés</h3>
+          <Link to="#" className="bouton">
+            Commencer maintenant
+          </Link>
         </div>
       </div>
     </section>
