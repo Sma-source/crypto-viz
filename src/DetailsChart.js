@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useState } from "react";
 // import Chartjs from "chart.js";
 import { Line } from "@reactchartjs/react-chart.js";
 import UpDown from "./UpDown";
@@ -63,30 +63,6 @@ const DetailsChart = ({ data }) => {
   //   }
   // });
 
-  const renderPrice = () => {
-    if (detail) {
-      return (
-        <>
-          {/* <img className="details-icon" src={detail.image} alt={detail.name} /> */}
-
-          <p>${detail.current_price.toFixed(2)}</p>
-          <UpDown
-            value={detail.price_change_percentage_24h.toFixed(2)}
-            classe={"cryptos-chart__subtext"}
-          ></UpDown>
-
-          {/* <h1>{detail.name}</h1>
-          <h2>{detail.symbol.toUpperCase()} </h2>
-
-          <p className="details-price">${detail.current_price.toFixed(2)}</p>
-          <UpDown
-            value={detail.price_change_percentage_24h.toFixed(2)}
-            classe={"cryptos-chart__subtext"}
-          ></UpDown> */}
-        </>
-      );
-    }
-  };
   const renderImg = () => {
     if (detail) {
       return (
@@ -186,6 +162,7 @@ const DetailsChart = ({ data }) => {
           </div>
         </div> */
   }
+
   if (detail) {
     return (
       <>
