@@ -1,5 +1,6 @@
 import React from "react";
 import { FaCoins, FaApple, FaGooglePlay, FaDesktop } from "react-icons/fa";
+import { Link } from "react-router-dom";
 const MockupSection = () => {
   return (
     <>
@@ -15,32 +16,36 @@ const MockupSection = () => {
           </figure>
         </div>
         <div className="row">
-          <div className="col  center-block">
-            <h2>
-              Buy, sell, and trade cryptocurrencies <br /> from your laptop,
-              tablet, or mobile <br /> device.
+          <div className="col center-block">
+            <h2 className="pb-1">
+              Info, Graphique et Prix des Cryptomonnaies <br /> depuis votre
+              ordinateur portable, tablette ou <br /> mobile{" "}
             </h2>
             <div class="flex social-btns">
-              <a class="app-btn blu flex vert" href="http:apple.com">
+              <Link to="#" class="app-btn blu flex vert" href="http:apple.com">
                 <FaApple />
                 <p>
                   Available on the <br /> <span class="big-txt">App Store</span>
                 </p>
-              </a>
+              </Link>
 
-              <a class="app-btn blu flex vert" href="http:google.com">
+              <Link to="#" class="app-btn blu flex vert" href="http:google.com">
                 <FaGooglePlay />
                 <p>
                   Get it on <br /> <span class="big-txt">Google Play</span>
                 </p>
-              </a>
+              </Link>
 
-              <a class="app-btn blu flex vert" href="http:alphorm.com">
+              <Link
+                to="#"
+                class="app-btn blu flex vert"
+                href="http:alphorm.com"
+              >
                 <FaDesktop />
                 <p>
                   Application <br /> <span class="big-txt">Desktop</span>
                 </p>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
