@@ -37,12 +37,10 @@ const Coins = () => {
   if (isLoading) {
     return (
       <div className="panel">
-        <div className="panel-header">
-          <h4>Cryptomonnaies</h4>
-        </div>
+        <div className="panel-header">{/* <h4>Cryptomonnaies</h4> */}</div>
         <div className="panel-labels">
           <div className="col-xs-4 col-sm-5">
-            <label>Nom</label>
+            <label>Cryptomonnaies</label>
           </div>
           <div className="col-xs-3 text-right">
             <label>Prix</label>
@@ -62,12 +60,10 @@ const Coins = () => {
     return (
       <>
         <div className="panel">
-          <div className="panel-header">
-            <h4>Cryptomonnaies</h4>
-          </div>
+          <div className="panel-header">{/* <h4>Cryptomonnaies</h4> */}</div>
           <div className="panel-labels">
             <div className="col-xs-4 col-sm-5">
-              <label>Nom</label>
+              <label>Cryptomonnaies</label>
             </div>
             <div className="col-xs-3 text-right">
               <label>Prix</label>
