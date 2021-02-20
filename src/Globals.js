@@ -48,7 +48,7 @@ const Globals = () => {
       <div className="col-sm-6">
         <div className="panel">
           <div className="panel-header">
-            <h4>Au cours des dernieres 24h</h4>
+            <h4>Au cours des dernières 24h</h4>
           </div>
           {globals.map((global) => {
             const {
