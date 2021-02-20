@@ -7,13 +7,12 @@ const Coins = () => {
   const { list } = useGlobalContext();
   const [coins, setCoins] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [currency, setCurrency] = useState("usd");
 
   useEffect(() => {
     const getCoins = async () => {
       try {
         const response = await fetch(
-          `${ApiUrl}/coins/markets?vs_currency=${currency}&ids=${list}&order=market_cap_desc`
+          `${ApiUrl}/coins/markets?vs_currency=usd&ids=${list}&order=market_cap_desc`
         );
         // console.log(response);
         const data = await response.json();
@@ -32,7 +31,7 @@ const Coins = () => {
     }, 30000);
 
     return () => clearInterval(interval);
-  }, [ApiUrl, list, currency]);
+  }, [ApiUrl, list]);
 
   if (isLoading) {
     return (

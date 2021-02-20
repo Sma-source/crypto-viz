@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const DetailsChart = ({ data }) => {
   // const chartRef = useRef();
   const { day, week, year, detail } = data;
-  const [timeFormat, setTimeFormat] = useState("24h");
+  const [timeFormat] = useState("24h");
 
   const determineTimeFormat = () => {
     switch (timeFormat) {
@@ -21,47 +21,6 @@ const DetailsChart = ({ data }) => {
         return day;
     }
   };
-
-  // useEffect(() => {
-  //   if (chartRef && chartRef.current && detail) {
-  //     const chartInstance = new Chartjs(chartRef.current, {
-  //       type: "line",
-  //       data: {
-  //         datasets: [
-  //           {
-  //             label: `${detail.name} price`,
-  //             data: determineTimeFormat(),
-  //             backgroundColor: "white",
-  //             borderColor: "red",
-  //             pointRadius: 1,
-  //             fill: false,
-  //           },
-  //         ],
-  //       },
-  //       options: {
-  //         lineHeightAnnotation: {
-  //           always: true,
-  //           hover: true,
-  //           lineWeight: 1.5,
-  //         },
-
-  //         animation: {
-  //           duration: 2000,
-  //         },
-  //         maintainAspectRatio: true,
-  //         responsive: true,
-  //         scales: {
-  //           x: {
-  //             max: 5000,
-  //             min: 0,
-  //             type: "category",
-  //             labels: ["January", "February", "March", "April", "May", "June"],
-  //           },
-  //         },
-  //       },
-  //     });
-  //   }
-  // });
 
   const renderImg = () => {
     if (detail) {
@@ -137,31 +96,6 @@ const DetailsChart = ({ data }) => {
     responsiveAnimationDuration: 0, // animation duration after a resize
     // showLines: false, // disable for all datasets
   };
-
-  {
-    /* <div className="col-md-6">
-          <div className="chart-button mt-1">
-            <button
-              onClick={() => setTimeFormat("24h")}
-              className="btn btn-outline-secondary btn-sm"
-            >
-              24h
-            </button>
-            <button
-              onClick={() => setTimeFormat("7d")}
-              className="btn btn-outline-secondary btn-sm mx-1"
-            >
-              7d
-            </button>
-            <button
-              onClick={() => setTimeFormat("1y")}
-              className="btn btn-outline-secondary btn-sm"
-            >
-              1y
-            </button>
-          </div>
-        </div> */
-  }
 
   if (detail) {
     return (

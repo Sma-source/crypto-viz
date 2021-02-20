@@ -15,7 +15,7 @@ const GlobalProvider = ({ children }) => {
   ]);
 
   return (
-    <GlobalContext.Provider value={{ ApiUrl, list }}>
+    <GlobalContext.Provider value={{ ApiUrl, list, setList }}>
       {children}
     </GlobalContext.Provider>
   );
