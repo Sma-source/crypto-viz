@@ -1128,7 +1128,7 @@ footer .bottom label:first-of-type {
   margin-bottom: 2em;
 
   box-shadow: 0 0.5em 2em 0.2em rgba(0, 0, 0, 0.33), 0 0 0 0.5px #000 inset;
-  transition: all 0.1s linear, line-height 0s linear;
+  transition: all 0.1s ease;
   background-position: 50% 100%, center;
   transform-origin: bottom center;
 }
@@ -1137,7 +1137,7 @@ footer .bottom label:first-of-type {
   color: transparent;
   text-shadow: 0 0 0em transparent;
   background-position: 50% -100%, center center;
-  transition: all 0.15s linear;
+  transition: all 0.15s ease;
   line-height: 0vmin;
 }
 
