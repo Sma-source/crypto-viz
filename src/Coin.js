@@ -22,7 +22,7 @@ const Coin = ({
         </div>
       </div>
       <div className="col-xs-3 text-right">
-        <div>${current_price.toFixed(2)}</div>
+        <div>${Math.round(current_price * 100) / 100}</div>
       </div>
       <div className="col-xs-3 text-right">
         <UpDown
