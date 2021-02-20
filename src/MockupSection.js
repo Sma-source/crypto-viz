@@ -6,11 +6,11 @@ const MockupSection = () => {
     <>
       <div className="mock">
         <div className="mockup pt-2">
-          <figure class="iphone">
+          <figure className="iphone">
             <FaCoins className="brand" />
             CoinData
           </figure>
-          <figure class="ipad">
+          <figure className="ipad">
             <FaCoins className="brand" />
             CoinData
           </figure>
@@ -21,29 +21,38 @@ const MockupSection = () => {
               Info, Graphique et Prix des Cryptomonnaies <br /> depuis votre
               ordinateur portable, tablette ou <br /> mobile{" "}
             </h2>
-            <div class="flex social-btns">
-              <Link to="#" class="app-btn blu flex vert" href="http:apple.com">
+            <div className="flex social-btns">
+              <Link
+                to="#"
+                className="app-btn blu flex vert"
+                href="http:apple.com"
+              >
                 <FaApple />
                 <p>
-                  Available on the <br /> <span class="big-txt">App Store</span>
-                </p>
-              </Link>
-
-              <Link to="#" class="app-btn blu flex vert" href="http:google.com">
-                <FaGooglePlay />
-                <p>
-                  Get it on <br /> <span class="big-txt">Google Play</span>
+                  Available on the <br />{" "}
+                  <span className="big-txt">App Store</span>
                 </p>
               </Link>
 
               <Link
                 to="#"
-                class="app-btn blu flex vert"
+                className="app-btn blu flex vert"
+                href="http:google.com"
+              >
+                <FaGooglePlay />
+                <p>
+                  Get it on <br /> <span className="big-txt">Google Play</span>
+                </p>
+              </Link>
+
+              <Link
+                to="#"
+                className="app-btn blu flex vert"
                 href="http:alphorm.com"
               >
                 <FaDesktop />
                 <p>
-                  Application <br /> <span class="big-txt">Desktop</span>
+                  Application <br /> <span className="big-txt">Desktop</span>
                 </p>
               </Link>
             </div>
