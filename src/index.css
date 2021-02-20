@@ -347,7 +347,7 @@ header .brand {
   display: inline-block;
 }
 
-header .dapp {
+header .btn {
   margin: 0px 16px 0px 8px;
   min-width: 0px;
   appearance: none;
@@ -366,24 +366,32 @@ header .dapp {
   text-decoration: none;
   outline: currentcolor none medium;
   word-break: keep-all;
-  color: rgb(33, 40, 51);
+
   border-radius: 4px;
   padding: 4px 16px;
   min-height: 24px;
   border: medium none;
-  background-image: linear-gradient(
-    rgb(248, 209, 47) 0%,
-    rgb(240, 185, 11) 100%
-  );
+
   font-size: 14px;
   font-weight: 400;
   line-height: 1;
   display: inline-flex;
 }
 @media (max-width: 40em) {
-  header .dapp {
+  header .btn {
     display: none;
   }
+}
+header .btn.yellow {
+  background-image: linear-gradient(
+    rgb(248, 209, 47) 0%,
+    rgb(240, 185, 11) 100%
+  );
+  color: rgb(33, 40, 51);
+}
+header .btn.white {
+  background: #f9fafb;
+  color: #1652f0;
 }
 .hollow {
   background: none;
