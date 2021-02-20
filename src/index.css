@@ -1137,16 +1137,16 @@ footer .bottom label:first-of-type {
   color: transparent;
   text-shadow: 0 0 0em transparent;
   background-position: 50% -100%, center center;
-  transition: all 0.15s linear, line-height 5s linear;
+  transition: all 0.15s linear;
   line-height: 0vmin;
 }
 
 .iphone {
-  width: 23.7623762376vmin;
-  height: 51.0891089109vmin;
-  line-height: 51.4455445545vmin;
-  border-width: 1.5207920792vmin;
-  border-radius: 4.0550130098vmin;
+  width: 23vmin;
+  height: 51vmin;
+  line-height: 51vmin;
+  border-width: 1.5vmin;
+  border-radius: 4vmin;
   background-image: linear-gradient(rgba(0, 0, 0, 0), #111),
     url(https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8dHJhZGluZ3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60);
   z-index: 200;
@@ -1158,7 +1158,7 @@ footer .bottom label:first-of-type {
   width: 60vmin;
   line-height: 85.8vmin;
   border-width: 3vmin;
-  border-radius: 4.2857142857vmin;
+  border-radius: 4vmin;
   background-image: linear-gradient(rgba(0, 0, 0, 0), #111),
     url("https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8dHJhZGluZ3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60");
   z-index: 100;

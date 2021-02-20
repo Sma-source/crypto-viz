@@ -14,11 +14,11 @@ const Header = () => {
             </Link>
           </div>
           <div className="col-xs-6 text-center links"></div>
-          <div class="mobile-hide col-xs-3 text-right">
-            <Link to="#" class="white btn hollow" rel="external" href="#">
+          <div className="mobile-hide col-xs-3 text-right">
+            <Link to="#" className="white btn hollow" rel="external" href="#">
               Se connecter
             </Link>
-            <Link to="#" class="yellow btn hollow" rel="external" href="#">
+            <Link to="#" className="yellow btn hollow" rel="external" href="#">
               Créer un compte
             </Link>
           </div>
