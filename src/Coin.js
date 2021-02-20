@@ -9,7 +9,6 @@ const Coin = ({
   symbol,
   current_price,
   price_change_percentage_24h,
-  total_volume,
 }) => {
   return (
     <Link to={`/${id}`} className="asset" key={id}>
@@ -23,7 +22,7 @@ const Coin = ({
         </div>
       </div>
       <div className="col-xs-3 text-right">
-        <div>${current_price}</div>
+        <div>${current_price.toFixed(2)}</div>
       </div>
       <div className="col-xs-3 text-right">
         <UpDown
