@@ -4,7 +4,7 @@ A app made with React, that show cryptocurrencies prices, charts and market capi
 
 ##
 <div style="width:60px ; height:60px">
-![Coindata img](/coindata.png "coindata")
+![Coindata img](coindata.png "coindata")
 <div>
 
 
