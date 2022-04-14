@@ -3,9 +3,9 @@
 A app made with React, that show cryptocurrencies prices, charts and market capitalizations.
 
 ##
-<div style="width:60px ; height:60px">
+
 ![Coindata img](https://github.com/Sma-source/crypto-viz/blob/main/coindata.png?raw=true)
-<div>
+
 
 
 ## Installation
